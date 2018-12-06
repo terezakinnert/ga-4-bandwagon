@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const band = require('../controllers/bandCtrl');
-// const userCtrl = require('../controllers/userCtrl');
+const user = require('../controllers/userCtrl');
 
 router.route('/bands')
   .get(band.bandIndex)
@@ -11,5 +11,14 @@ router.route('/bands/:id')
   .get(band.bandShow)
   .put(band.bandUpdate)
   .delete(band.bandDelete);
+
+router.route('/users')
+  .get(user.userIndex)
+  .post(user.userCreate);
+
+router.route('/users/:id')
+  .get(user.userShow)
+  .put(user.userUpdate)
+  .delete(user.userDelete);
 
 module.exports = router;

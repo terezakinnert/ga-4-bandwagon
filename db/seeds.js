@@ -28,15 +28,21 @@ const bandData = [
 
 const userData = [
   {
-    _id: userIds[0],
     username: 'Bob',
     email: 'b@b',
-    password: 'pass'
+    password: 'pass',
+    location: 'Chicago',
+    instrumentsPlayed: {instrument: 'Drums'},
+    lookingForBands: true,
+    _id: userIds[0]
   }, {
-    _id: userIds[1],
     username: 'Jake',
     email: 'j@j',
-    password: 'pass'
+    password: 'pass',
+    location: 'Chicago',
+    instrumentsPlayed: {instrument: 'Vocals'},
+    lookingForBands: false,
+    _id: userIds[1]
   }
 ];
 
