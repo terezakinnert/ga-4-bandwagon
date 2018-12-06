@@ -10,6 +10,13 @@ router.route('/bands/:id')
   .put(band.bandUpdate)
   .delete(band.bandDelete);
 
+const auth = require('../controllers/authCtrl');
+router.route('/register')
+  .post(auth.register);
+
+router.route('/login')
+  .post(auth.login);
+
 const user = require('../controllers/userCtrl');
 router.route('/users')
   .get(user.userIndex)

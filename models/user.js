@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const instrumentSchema = mongoose.Schema({
   instrument: [{
@@ -18,6 +19,20 @@ const userSchema = mongoose.Schema({
   genres: [String],
   influences: [String],
   bandsFavourited: String
+});
+
+userSchema.methods.validatePassword = function(password) {
+  return bcrypt.compareSync(password, this.password);
+};
+
+userSchema.pre('save', function() {
+  if(this.isModified('password')) {
+    this.password = bcrypt.hashSync(this.password, 8);
+  }
+});
+
+userSchema.set('toJSON', {
+  virtuals: true
 });
 
 module.exports = mongoose.model('User', userSchema);
