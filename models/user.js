@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const instrumentSchema = mongoose.Schema({
-  instrument: [{
-    type: String,
-    enum: ['Lead guitar', 'Rhythm guitar', 'Drums', 'Bass', 'Vocals', 'Keyboards', 'Saxophone', 'Clarinet', 'Piano']
-  }]
-});
+// const instrumentSchema = mongoose.Schema({
+//   instrument: [{
+//     type: String,
+//     enum: ['Lead guitar', 'Rhythm guitar', 'Drums', 'Bass', 'Vocals', 'Keyboards', 'Saxophone', 'Clarinet', 'Piano']
+//   }]
+// });
 
 const userSchema = mongoose.Schema({
   username: String,
   email: String,
   password: String,
   location: String,
-  instrumentsPlayed: [ instrumentSchema ],
+  instrumentsPlayed: String,
   lookingForBands: Boolean,
   website: String,
   genres: [String],

@@ -12,3 +12,9 @@ const bandSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('Band', bandSchema);
+
+
+// lookingForInstrument: [{
+//   instrument: [{ type: mongoose.Schema.ObjectId, ref: 'Instrument' } ],
+//   text: String
+// }],

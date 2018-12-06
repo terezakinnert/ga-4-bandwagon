@@ -3,7 +3,7 @@ const { dbUri } = require('../config/environment');
 
 const Band = require('../models/band');
 const User = require('../models/user');
-// const Instrument = require('../models/instrument');
+const Instrument = require('../models/instrument');
 const Message = require('../models/message');
 
 const userIds = [
@@ -32,7 +32,7 @@ const userData = [
     email: 'b@b',
     password: 'pass',
     location: 'Chicago',
-    instrumentsPlayed: {instrument: 'Drums'},
+    instrumentsPlayed: 'Drums',
     lookingForBands: true,
     _id: userIds[0]
   }, {
@@ -40,16 +40,16 @@ const userData = [
     email: 'j@j',
     password: 'pass',
     location: 'Chicago',
-    instrumentsPlayed: {instrument: 'Vocals'},
+    instrumentsPlayed: 'Vocals',
     lookingForBands: false,
     _id: userIds[1]
   }
 ];
 
-// const instrumentData = [
-//   { instument: 'Drums' },
-//   { instument: 'Vocals' }
-// ];
+const instrumentData = [
+  { instument: 'Drums' },
+  { instument: 'Vocals' }
+];
 
 const messageData = [
   {
@@ -66,24 +66,8 @@ const messageData = [
 mongoose.connect(dbUri);
 Band.collection.drop();
 User.collection.drop();
-// Instrument.collection.drop();
+Instrument.collection.drop();
 Message.collection.drop();
-
-Band.create(bandData)
-  .then(bands => {
-    console.log(`Created ${bands.length} bands.`);
-    return User.create(userData);
-  })
-  .then(users => {
-    console.log(`Created ${users.length} users.`);
-    return Message.create(messageData);
-  })
-  .then(messages => {
-    console.log(`Created ${messages.length} messages.`);
-    mongoose.connection.close();
-  })
-  .catch(err => console.log(err));
-
 
 // Band.create(bandData)
 //   .then(bands => {
@@ -92,10 +76,6 @@ Band.create(bandData)
 //   })
 //   .then(users => {
 //     console.log(`Created ${users.length} users.`);
-//     return Instrument.create(instrumentData);
-//   })
-//   .then(instruments => {
-//     console.log(`Created ${instruments.length} instruments.`);
 //     return Message.create(messageData);
 //   })
 //   .then(messages => {
@@ -103,3 +83,25 @@ Band.create(bandData)
 //     mongoose.connection.close();
 //   })
 //   .catch(err => console.log(err));
+
+
+Band.create(bandData)
+  .then(bands => {
+    console.log(`Created ${bands.length} bands.`);
+    return User.create(userData);
+  })
+  .then(users => {
+    console.log(`Created ${users.length} users.`);
+    return Instrument.create(instrumentData);
+  })
+  .then(instruments => {
+    console.log(`Created ${instruments.length} instruments.`);
+    return Message.create(messageData);
+  })
+  .then(messages => {
+    console.log(`Created ${messages.length} messages.`);
+    mongoose.connection.close();
+  })
+  .catch(err => console.log(err));
+
+// {instrument: 'Drums'}
