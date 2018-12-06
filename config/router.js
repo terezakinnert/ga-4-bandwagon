@@ -35,4 +35,12 @@ router.route('/messages')
 router.route('/messages/:id')
   .delete(messages.delete);
 
+const instruments = require('../controllers/instrumentCtrl');
+router.route('/instruments')
+  .get(instruments.index)
+  .post(instruments.create);
+
+router.route('/instruments/:id')
+  .delete(instruments.delete);
+
 module.exports = router;
