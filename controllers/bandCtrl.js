@@ -1,26 +1,26 @@
 const Band = require('../models/band');
 
-function index(req, res, next) {
+function indexRoute(req, res, next) {
   Band.find()
     .then(bands => res.json(bands))
     .catch(next);
 }
 
-function show(req, res, next) {
+function showRoute(req, res, next) {
   Band
     .findById(req.params.id)
     .then(band => res.json(band))
     .catch(next);
 }
 
-function create(req, res, next) {
+function createRoute(req, res, next) {
   Band
     .create(req.body)
     .then(band => res.status(201).json(band))
     .catch(next);
 }
 
-function update(req, res, next) {
+function updateRoute(req, res, next) {
   Band
     .findById(req.params.id)
     .then(band => band.set(req.body))
@@ -37,9 +37,9 @@ function deleteRoute(req, res, next) {
 }
 
 module.exports = {
-  bandIndex: index,
-  bandShow: show,
-  bandCreate: create,
-  bandUpdate: update,
+  bandIndex: indexRoute,
+  bandShow: showRoute,
+  bandCreate: createRoute,
+  bandUpdate: updateRoute,
   bandDelete: deleteRoute
 };

@@ -1,7 +1,6 @@
 const router = require('express').Router();
 
 const band = require('../controllers/bandCtrl');
-const user = require('../controllers/userCtrl');
 
 router.route('/bands')
   .get(band.bandIndex)
@@ -11,6 +10,8 @@ router.route('/bands/:id')
   .get(band.bandShow)
   .put(band.bandUpdate)
   .delete(band.bandDelete);
+
+const user = require('../controllers/userCtrl');
 
 router.route('/users')
   .get(user.userIndex)
