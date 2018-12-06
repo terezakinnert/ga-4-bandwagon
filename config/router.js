@@ -1,6 +1,11 @@
 const router = require('express').Router();
 
 const band = require('../controllers/bandCtrl');
+const auth = require('../controllers/authCtrl');
+const user = require('../controllers/userCtrl');
+const messages = require('../controllers/messagesCtrl');
+const instruments = require('../controllers/instrumentCtrl');
+
 router.route('/bands')
   .get(band.bandIndex)
   .post(band.bandCreate);
@@ -10,24 +15,20 @@ router.route('/bands/:id')
   .put(band.bandUpdate)
   .delete(band.bandDelete);
 
-const auth = require('../controllers/authCtrl');
 router.route('/register')
   .post(auth.register);
 
 router.route('/login')
   .post(auth.login);
 
-const user = require('../controllers/userCtrl');
 router.route('/users')
-  .get(user.userIndex)
-  .post(user.userCreate);
+  .get(user.userIndex);
 
 router.route('/users/:id')
   .get(user.userShow)
   .put(user.userUpdate)
   .delete(user.userDelete);
 
-const messages = require('../controllers/messagesCtrl');
 router.route('/messages')
   .get(messages.index)
   .post(messages.create);
@@ -35,7 +36,6 @@ router.route('/messages')
 router.route('/messages/:id')
   .delete(messages.delete);
 
-const instruments = require('../controllers/instrumentCtrl');
 router.route('/instruments')
   .get(instruments.index)
   .post(instruments.create);

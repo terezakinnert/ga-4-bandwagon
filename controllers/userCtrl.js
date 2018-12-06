@@ -13,13 +13,6 @@ function showRoute(req, res, next) {
     .catch(next);
 }
 
-function createRoute(req, res, next) {
-  User
-    .create(req.body)
-    .then(user => res.status(201).json(user))
-    .catch(next);
-}
-
 function updateRoute(req, res, next) {
   User
     .findById(req.params.id)
@@ -39,7 +32,6 @@ function deleteRoute(req, res, next) {
 module.exports = {
   userIndex: indexRoute,
   userShow: showRoute,
-  userCreate: createRoute,
   userUpdate: updateRoute,
   userDelete: deleteRoute
 };
