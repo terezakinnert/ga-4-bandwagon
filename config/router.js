@@ -25,4 +25,7 @@ router.route('/messages')
   .get(messages.index)
   .post(messages.create);
 
+router.route('/messages/:id')
+  .delete(messages.delete);
+
 module.exports = router;

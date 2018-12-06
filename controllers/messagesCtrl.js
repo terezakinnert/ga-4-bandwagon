@@ -1,8 +1,8 @@
 const Message = require('../models/message');
 
 function indexRoute(req, res, next) {
-  Message.find({ $or: [{ from: req.tokenUserId }, { to: req.tokenUserId }] })
-    .populate('from to', 'username image')
+  Message.find()
+    // .populate('from to', 'username image')
     .sort('createdAt')
     .then(messages => res.json(messages))
     .catch(next);
@@ -11,7 +11,7 @@ function indexRoute(req, res, next) {
 function createRoute(req, res, next) {
   req.body.from = req.tokenUserId;
   Message.create(req.body)
-    .then(message => Message.populate(message, 'from to'))
+    // .then(message => Message.populate(message, 'from to'))
     .then(message => res.json(message))
     .catch(next);
 }
@@ -27,3 +27,6 @@ module.exports = {
   create: createRoute,
   delete: deleteRoute
 };
+
+
+// Message.find({ $or: [{ from: req.tokenUserId }, { to: req.tokenUserId }] });
