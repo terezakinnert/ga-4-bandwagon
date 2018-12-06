@@ -15,6 +15,7 @@ const userSchema = mongoose.Schema({
   location: String,
   instrumentsPlayed: String,
   lookingForBands: Boolean,
+  image: String,
   website: String,
   genres: [String],
   influences: [String],
