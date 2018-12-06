@@ -1,5 +1,15 @@
 const router = require('express').Router();
 
-const bandCtrl = require('../controllers/bandCtrl');
+const band = require('../controllers/bandCtrl');
+// const userCtrl = require('../controllers/userCtrl');
 
-// router.route('/')
+router.route('/bands')
+  .get(band.bandIndex)
+  .post(band.bandCreate);
+
+router.route('/bands/:id')
+  .get(band.bandShow)
+  .put(band.bandUpdate)
+  .delete(band.bandDelete);
+
+module.exports = router;

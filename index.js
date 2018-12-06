@@ -10,9 +10,9 @@ mongoose.connect(dbUri);
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
+// app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
-const router = require('.config/router');
+const router = require('./config/router');
 app.use('/api', router);
 app.listen(port, () => console.log(`Express is listening on port ${port}`));
 
