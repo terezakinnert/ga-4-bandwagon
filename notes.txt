@@ -1,0 +1,23 @@
+Wed 5/12
+got brief and started planning 5/12
+thought about models, got sign-off (and clarification on some concepts)
+looked at a few design examples
+wireframes
+model & views planning
+started code added, file structure made and first packages installed
+
+Thu 6/12
+models with basic fields in
+band routes
+user routes
+message routes (was deleting a different message than the ID I passed in. After a google it turns out I was using Matt's "findOneAndDelete/Remove" method instead of "findByIdAndDelete", which now definitely works as should)
+auth routes (register and login)
+started testing (copied index_spec from desserts)
+no idea how to add the instruments: - The ones from seeds are not showing up in insomnia even though I'm populating them. - referenced schema doesn't work at all: don't know how to add them to seeds so they reflect the model => there was a fucking typo in the seed data (instument), that's why seeds weren't showing in insomnia. Still wonder if enums would be easier, but don't know if I can add to them
+realised I don't need a create route for users, duh!
+realised I don't have a different way to register as a user OR a band. Think I'll just make creating a band a secure route and people will have to manage their band... ? (maybe talk to Sophia/Joe)
+
+Fri 7/12
+rejigged bands, users and instruments again, not sure if correctly (need conceptual help)
+set up app.js, started home and header
+brainsweeping sesh with Rob: turns out I need to have instruments as a separate entity AND another two routes to add and delete from user's instruments Played array

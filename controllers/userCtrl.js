@@ -49,6 +49,8 @@ function deleteInstrument(req, res, next) {
     .then(user => {
       // const instrument = user.instrumentsPlayed.id(req.params.instrumentId);
       // instrument.remove();
+      // won't work because instrumentsPlayed is an array of objectIds, not objects!
+      // (event though ids are tiny weird objects)
       user.instrumentsPlayed = user.instrumentsPlayed.filter(id => !id.equals(req.params.instrumentId));
       return user.save();
     })
