@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import Header from './components/Header';
 import Home from './components/Home';
 
 class App extends React.Component {
@@ -9,7 +10,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <h1>header goes here</h1>
+          <Header />
           <main>
             <Switch>
               <Route exact path='/' component={Home} />

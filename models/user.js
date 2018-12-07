@@ -1,13 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// const instrumentSchema = mongoose.Schema({
-//   instrument: [{
-//     type: String,
-//     enum: ['Lead guitar', 'Rhythm guitar', 'Drums', 'Bass', 'Vocals', 'Keyboards', 'Saxophone', 'Clarinet', 'Piano']
-//   }]
-// });
-
 const userSchema = mongoose.Schema({
   username: String,
   email: String,
@@ -18,8 +11,8 @@ const userSchema = mongoose.Schema({
   image: String,
   website: String,
   genres: [String],
-  influences: [String],
-  bandsFavourited: String
+  influences: [String]
+  // bandsFavourited: String
 });
 
 userSchema.methods.validatePassword = function(password) {
@@ -32,8 +25,18 @@ userSchema.pre('save', function() {
   }
 });
 
+// bandsCreated virtual
+
 userSchema.set('toJSON', {
   virtuals: true
 });
 
 module.exports = mongoose.model('User', userSchema);
+
+
+// const instrumentSchema = mongoose.Schema({
+//   instrument: [{
+//     type: String,
+//     enum: ['Lead guitar', 'Rhythm guitar', 'Drums', 'Bass', 'Vocals', 'Keyboards', 'Saxophone', 'Clarinet', 'Piano']
+//   }]
+// });
