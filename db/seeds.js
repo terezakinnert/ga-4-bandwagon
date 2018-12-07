@@ -69,22 +69,6 @@ User.collection.drop();
 Instrument.collection.drop();
 Message.collection.drop();
 
-// Band.create(bandData)
-//   .then(bands => {
-//     console.log(`Created ${bands.length} bands.`);
-//     return User.create(userData);
-//   })
-//   .then(users => {
-//     console.log(`Created ${users.length} users.`);
-//     return Message.create(messageData);
-//   })
-//   .then(messages => {
-//     console.log(`Created ${messages.length} messages.`);
-//     mongoose.connection.close();
-//   })
-//   .catch(err => console.log(err));
-
-
 Band.create(bandData)
   .then(bands => {
     console.log(`Created ${bands.length} bands.`);
@@ -103,5 +87,3 @@ Band.create(bandData)
     mongoose.connection.close();
   })
   .catch(err => console.log(err));
-
-// {instrument: 'Drums'}

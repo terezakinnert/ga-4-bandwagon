@@ -6,6 +6,7 @@ const bandSchema = mongoose.Schema({
   lookingForMembers: Boolean,
   lookingForInstrument: String,
   image: String,
+  members: [String],
   website: String,
   genres: [String],
   influences: [String],
