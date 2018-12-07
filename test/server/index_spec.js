@@ -1,10 +1,10 @@
 /* global api, expect, describe, it, beforeEach */
 
 const Band = require('../../models/band');
-const userIds = [
-  '5c090718a118163cfc161168',
-  '5c090724a118163cfc161169'
-];
+// const userIds = [
+//   '5c090718a118163cfc161168',
+//   '5c090724a118163cfc161169'
+// ];
 
 const bandData = [
   {
@@ -53,16 +53,14 @@ describe('Bands INDEX', () => {
       });
   });
 
-  // it('should return the correct data', done => {
-  //   api.get('/api/bands')
-  //     .end((err, res) => {
-  //       res.body.forEach((band, index) => {
-  //         expect(band.name).to.eq(bandData[index].name);
-  //         // console.log(bandData[index].name);
-  //         // Complete this
-  //       });
-  //       done();
-  //     });
-  // });
+  it('should return the correct data', done => {
+    api.get('/api/bands')
+      .end((err, res) => {
+        res.body.forEach((band, index) => {
+          expect(band.name).to.eq(bandData[index].name);
+        });
+        done();
+      });
+  });
 
 });
