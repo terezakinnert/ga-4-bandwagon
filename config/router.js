@@ -29,6 +29,12 @@ router.route('/users/:userId')
   .put(user.userUpdate)
   .delete(user.userDelete);
 
+router.route('/users/:userId/instruments')
+  .post(user.addInstrument);
+
+router.route('/users/:userId/instruments/:instrumentId')
+  .delete(user.deleteInstrument);
+
 router.route('/messages')
   .get(messages.index)
   .post(messages.create);
@@ -36,11 +42,12 @@ router.route('/messages')
 router.route('/messages/:id')
   .delete(messages.delete);
 
-router.route('/users/:userId/instruments')
+router.route('/instruments')
   .get(instruments.index)
   .post(instruments.create);
 
-router.route('/users/:userId/instruments/:instrumentId')
+router.route('/instruments/:instrumentId')
   .delete(instruments.delete);
+
 
 module.exports = router;

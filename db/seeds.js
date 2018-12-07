@@ -11,6 +11,12 @@ const userIds = [
   '5c090724a118163cfc161169'
 ];
 
+const instrumentIds = [
+  '5c090718a118163cfc16a168',
+  '5c090724a118163cfc16a169',
+  '5c090724a118163cfc16a16a'
+];
+
 const bandData = [
   {
     name: 'Blues Brothers',
@@ -32,7 +38,7 @@ const userData = [
     email: 'b@b',
     password: 'pass',
     location: 'Chicago',
-    instrumentsPlayed: 'Drums',
+    instrumentsPlayed: [instrumentIds[0], instrumentIds[2]],
     lookingForBands: true,
     _id: userIds[0]
   }, {
@@ -40,15 +46,24 @@ const userData = [
     email: 'j@j',
     password: 'pass',
     location: 'Chicago',
-    instrumentsPlayed: 'Vocals',
+    instrumentsPlayed: [instrumentIds[1]],
     lookingForBands: false,
     _id: userIds[1]
   }
 ];
 
 const instrumentData = [
-  { instrument: 'Drums' },
-  { instrument: 'Vocals' }
+  {
+    _id: instrumentIds[0],
+    name: 'Drums'
+  },
+  {
+    _id: instrumentIds[1],
+    name: 'Vocals'
+  }, {
+    _id: instrumentIds[2],
+    name: 'Piano'
+  }
 ];
 
 const messageData = [

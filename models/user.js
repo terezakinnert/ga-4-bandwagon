@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
   email: String,
   password: String,
   location: String,
-  instrumentsPlayed: String,
+  instrumentsPlayed: [{ type: mongoose.Schema.ObjectId, ref: 'Instrument' }],
   lookingForBands: Boolean,
   image: String,
   website: String,
