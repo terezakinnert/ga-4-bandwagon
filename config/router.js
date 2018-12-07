@@ -24,7 +24,7 @@ router.route('/login')
 router.route('/users')
   .get(user.userIndex);
 
-router.route('/users/:id')
+router.route('/users/:userId')
   .get(user.userShow)
   .put(user.userUpdate)
   .delete(user.userDelete);
@@ -36,11 +36,11 @@ router.route('/messages')
 router.route('/messages/:id')
   .delete(messages.delete);
 
-router.route('/instruments')
+router.route('/users/:userId/instruments')
   .get(instruments.index)
   .post(instruments.create);
 
-router.route('/instruments/:id')
+router.route('/users/:userId/instruments/:instrumentId')
   .delete(instruments.delete);
 
 module.exports = router;

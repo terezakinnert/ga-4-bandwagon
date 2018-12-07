@@ -47,8 +47,8 @@ const userData = [
 ];
 
 const instrumentData = [
-  { instrument: ['Drums'] },
-  { instrument: ['Vocals'] }
+  { instrument: 'Drums' },
+  { instrument: 'Vocals' }
 ];
 
 const messageData = [

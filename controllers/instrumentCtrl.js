@@ -13,7 +13,7 @@ function createRoute(req, res, next) {
 }
 
 function deleteRoute(req, res, next) {
-  Instrument.findByIdAndDelete(req.params.id)
+  Instrument.findByIdAndDelete(req.params.instrumentId)
     .then(() => res.sendStatus(204))
     .catch(next);
 }

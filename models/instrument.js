@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const instrumentSchema = mongoose.Schema({
-  instrument: [String]
+  instrument: String
 });
 
 module.exports = mongoose.model('Instrument', instrumentSchema);
