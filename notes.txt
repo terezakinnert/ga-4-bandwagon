@@ -21,3 +21,7 @@ Fri 7/12
 rejigged bands, users and instruments again, not sure if correctly (need conceptual help)
 set up app.js, started home and header
 brainsweeping sesh with Rob: turns out I need to have instruments as a separate entity AND another two routes to add and delete from user's instruments Played array
+started register on frontend, but doesn't work (can't read state of undefined)
+did a bit more testing (show and create on bands; show doesn't return 200 response, even though it does in insomnia)
+added secure route to routes
+faffed
