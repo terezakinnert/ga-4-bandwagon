@@ -16,9 +16,14 @@ class BandIndex extends React.Component {
 
   render() {
     return(
-      <div>
-
-      </div>
+      <section>
+        <h1>All the Bands</h1>
+        <div>
+          {this.state.bands && this.state.bands.map(
+            band =>
+          )}
+        </div>
+      </section>
     );
   }
 }

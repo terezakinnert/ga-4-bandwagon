@@ -1,62 +1,38 @@
-import React from 'react';
+import React  from 'react';
 import axios from 'axios';
-// import { withRouter } from 'react-router-dom';
 
-import { saveToken } from '../../lib/auth';
-// import { handleChange } from '../../lib/common';
+import handleChange from '../../lib/common';
 
 class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.state.handleChange = this.handleChange.bind(this);
-    this.state.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  handleChange(event) {
-    const { target: {name, value} } = event;
-    this.setState({ [name]: value });
-  }
-
-  handleSubmit(event) {
+  
+  handleSubmit(event){
     event.preventDefault();
+    // console.log( 'register', this.state);
     axios.post('/api/register', this.state)
       .then(result => {
-        console.log('this.state', this.state, '+ result', result);
-        saveToken(result.data.token);
-      })
-      .then(() => this.props.history.push('/'))
-      .catch(() => {
-        this.props.history.replace('/login');
+        console.log('register', result.data);
+        this.props.history.push('/login');
       });
   }
-  //
-  // handleSubmit(e) {
-  //     e.preventDefault();
-  //
-  //     axios.post('/api/register', this.state)
-  //       .then(res => {
-  //         saveToken(res.data.token);
-  //       })
-  //       .then(() => this.props.history.push('/burgers'))
-  //       .catch(() => {
-  //         this.props.history.replace('/login');
-  //       });
-  //   }
-
 
   render() {
-    return(
+    return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>Username</label>
-          <input name="username" type="text" onChange={this.handleChange} />
+          <input name="username" type="text" onChange={this.handleChange} value={this.state.username || ''} />
 
           <label>Email</label>
-          <input name="email" type="email" onChange={this.handleChange} />
+          <input name="email" type="email" onChange={this.handleChange} value={this.state.email || ''} />
 
           <label>Password</label>
-          <input name="password" type="password" onChange={this.handleChange} />
+          <input name="password" type="password" onChange={this.handleChange} value={this.state.password || ''} />
 
           <button>Sign Up</button>
         </form>
