@@ -1,16 +1,15 @@
 import React  from 'react';
 import axios from 'axios';
 
-import handleChange from '../../lib/common';
+// import handleChange from '../../lib/common';
 
 class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.handleChange = handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  
   handleSubmit(event){
     event.preventDefault();
     // console.log( 'register', this.state);
@@ -19,6 +18,10 @@ class Register extends React.Component {
         console.log('register', result.data);
         this.props.history.push('/login');
       });
+  }
+
+  handleChange({ target: { name, value }}) {
+    this.setState({ [name]: value });
   }
 
   render() {
