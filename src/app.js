@@ -8,6 +8,8 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Index from './components/bands/Index';
 import New from './components/bands/New';
+import Show from './components/bands/Show';
+import UserIndex from './components/users/Index';
 
 class App extends React.Component {
   render() {
@@ -21,7 +23,9 @@ class App extends React.Component {
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/bands' component={Index} />
+              <Route exact path='/users' component={UserIndex} />
               <Route exact path='/bands/new' component={New} />
+              <Route exact path='/bands/:id' component={Show} />
             </Switch>
           </main>
         </div>

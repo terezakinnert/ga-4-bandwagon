@@ -33,7 +33,8 @@ const bandData = [
     name: 'Blues Brothers',
     location: 'Chicago',
     lookingForMembers: true,
-    lookingForInstrument: 'Drums'
+    lookingForInstrument: 'Drums',
+    members: ['Vocals: Jake E. Blues', 'Harmonica, vocals: Elwood J. Blues ']
   },
   {
     name: 'Shellac',

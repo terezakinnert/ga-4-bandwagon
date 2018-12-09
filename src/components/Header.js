@@ -11,7 +11,9 @@ class Header extends React.Component {
     return(
       <nav>
         <Link to="/">Home</Link>
+        <Link to="/bands">All Bands</Link>
         <Link to="/bands/new">Add Your Band</Link>
+        <Link to="/users">All Musicians</Link>
         <Link to="/register">Sign Up</Link>
         <Link to="/login">Log In</Link>
       </nav>
