@@ -10,6 +10,9 @@ mongoose.connect(dbUri);
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+const morgan = require('morgan');
+app.use(morgan('dev'));
+
 // app.get('/*', (req, res) => res.sendFile(`${__dirname}/public/index.html`));
 
 const router = require('./config/router');

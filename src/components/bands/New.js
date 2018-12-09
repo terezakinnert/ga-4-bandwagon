@@ -19,6 +19,7 @@ class New extends React.Component {
     axios.post('/api/bands', this.state, { headers: { Authorization: `Bearer ${getToken()}` }})
       .then(result => {
         this.props.history.push(`/bands/${result.data._id}`);
+        console.log('this.state', this.state);
       });
   }
 
@@ -34,11 +35,11 @@ class New extends React.Component {
 
           <span>Looking For Members?</span>
           <div>
-            <input name="looking" type="radio" id="true" onChange={this.handleChange} value={this.state.lookingForMembers || ''} />
+            <input name="lookingForMembers" type="radio" id="yes" onChange={this.handleChange} value="true" />
             <label htmlFor="true">Yes</label>
           </div>
           <div>
-            <input name="looking" type="radio" id="false" onChange={this.handleChange} value={this.state.lookingForMembers || ''} />
+            <input name="lookingForMembers" type="radio" id="no" onChange={this.handleChange} value="false" />
             <label htmlFor="false">Not right now</label>
           </div>
 
