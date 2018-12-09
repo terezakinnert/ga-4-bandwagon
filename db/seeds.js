@@ -14,7 +14,18 @@ const userIds = [
 const instrumentIds = [
   '5c090718a118163cfc16a168',
   '5c090724a118163cfc16a169',
-  '5c090724a118163cfc16a16a'
+  '5c090724a118163cfc16a16a',
+  '5c090724a118163cfc16a16b',
+  '5c090724a118163cfc16a16c',
+  '5c090724a118163cfc16a16d',
+  '5c090724a118163cfc16a16e',
+  '5c090724a118163cfc16a16f',
+  '5c090724a118163cfc16b16a',
+  '5c090724a118163cfc16c16a',
+  '5c090724a118163cfc16d16a',
+  '5c090724a118163cfc16e16a',
+  '5c090724a118163cfc16f16a',
+  '5c090724a118163cfc16916a'
 ];
 
 const bandData = [
@@ -60,9 +71,50 @@ const instrumentData = [
   {
     _id: instrumentIds[1],
     name: 'Vocals'
-  }, {
+  },
+  {
     _id: instrumentIds[2],
+    name: 'Bass'
+  },
+  {
+    _id: instrumentIds[3],
+    name: 'Lead guitar'
+  },
+  {
+    _id: instrumentIds[4],
+    name: 'Rhythm guitar'
+  },
+  {
+    _id: instrumentIds[5],
     name: 'Piano'
+  },
+  {
+    _id: instrumentIds[6],
+    name: 'Keyboard'
+  },
+  {
+    _id: instrumentIds[7],
+    name: 'Synth'
+  },
+  {
+    _id: instrumentIds[8],
+    name: 'Saxophone'
+  },
+  {
+    _id: instrumentIds[9],
+    name: 'Clarinet'
+  },
+  {
+    _id: instrumentIds[10],
+    name: 'Double bass'
+  },
+  {
+    _id: instrumentIds[11],
+    name: 'Violin'
+  },
+  {
+    _id: instrumentIds[12],
+    name: 'Accordion'
   }
 ];
 

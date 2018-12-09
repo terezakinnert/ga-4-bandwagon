@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Index from './components/bands/Index';
 import New from './components/bands/New';
 
 class App extends React.Component {
@@ -19,6 +20,7 @@ class App extends React.Component {
               <Route exact path='/' component={Home} />
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
+              <Route exact path='/bands' component={Index} />
               <Route exact path='/bands/new' component={New} />
             </Switch>
           </main>

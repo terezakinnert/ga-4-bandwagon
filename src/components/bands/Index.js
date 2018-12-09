@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 // import { Link, withRouter } from 'react-router-dom';
+import BandBox from './BandBox';
 
 
 class BandIndex extends React.Component {
@@ -20,7 +21,7 @@ class BandIndex extends React.Component {
         <h1>All the Bands</h1>
         <div>
           {this.state.bands && this.state.bands.map(
-            band =>
+            band => <BandBox key={band._id} band={band} />
           )}
         </div>
       </section>
@@ -29,13 +30,3 @@ class BandIndex extends React.Component {
 }
 
 export default BandIndex;
-
-<section className="section">
-  <h1 className="title">All the burgers</h1>
-  <hr />
-  <div className="box-container">
-    {this.state.burgers && this.state.burgers.map(
-      burger => <BurgerBox key={burger._id} burger={burger}/>
-    )}
-  </div>
-</section>

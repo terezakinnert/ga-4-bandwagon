@@ -13,6 +13,7 @@ class New extends React.Component {
     this.state = {};
     this.handleChange = handleChange.bind(this);
     this.createBand = this.createBand.bind(this);
+    this.getInstruments = this.getInstruments.bind(this);
   }
 
   createBand() {
@@ -24,6 +25,13 @@ class New extends React.Component {
       });
   }
 
+  getInstruments() {
+    axios.get('/api/instruments')
+      .then(result => {
+        this.setState({ instruments: result.data });
+        console.log('instruments?', this.state);
+      });
+  }
 
   render() {
     return(
@@ -48,7 +56,7 @@ class New extends React.Component {
           {/* <label htmlFor="instruments">What instruments do you need your new member to play?</label>
           <input name="instruments" type="text" onChange={this.handleChange} value={this.state.instruments || ''} /> */}
 
-          <Select onChange={this.handleChange} />
+          <Select onChange={this.handleChange} onClick={this.getInstruments} instruments={this.instruments} />
 
           <label htmlFor="image">Image URL</label>
           <input name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />
