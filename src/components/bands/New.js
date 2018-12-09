@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import { handleChange } from '../../lib/common';
 import { getToken } from '../../lib/auth';
+import Select from './Select';
 
 
 class New extends React.Component {
@@ -22,6 +23,7 @@ class New extends React.Component {
         console.log('this.state', this.state);
       });
   }
+
 
   render() {
     return(
@@ -43,8 +45,10 @@ class New extends React.Component {
             <label htmlFor="false">Not right now</label>
           </div>
 
-          <label htmlFor="instruments">What instruments do you need your new member to play?</label>
-          <input name="instruments" type="text" onChange={this.handleChange} value={this.state.instruments || ''} />
+          {/* <label htmlFor="instruments">What instruments do you need your new member to play?</label>
+          <input name="instruments" type="text" onChange={this.handleChange} value={this.state.instruments || ''} /> */}
+
+          <Select onChange={this.handleChange} />
 
           <label htmlFor="image">Image URL</label>
           <input name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />
