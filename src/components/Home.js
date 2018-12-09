@@ -11,6 +11,20 @@ class Home extends React.Component {
     return(
       <div>
         <h2>Welcome to BandWagon!</h2>
+        <h4>Find your next bandmates</h4>
+        <div>
+          <div>Sign Up</div>
+          <div>Log In</div>
+        </div>
+        <section>
+          <h4>How it works</h4>
+          <div>
+            <div>Sign up or login</div>
+            <div>Create your or your band&apos;s profile and browse the results.</div>
+            <div>Get in touch with the band or musician you think would be a good fit and arrange to meet up.</div>
+            <div>When you find your &quot;match&quot;, change your profile to not looking.</div>
+          </div>
+        </section>
       </div>
     );
   }

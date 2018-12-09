@@ -9,11 +9,8 @@ function Select({ instruments }) {
       <select>
         <option value="lookingForInstrument" name="lookingForInstrument">Select one...</option>
         {instruments
-          ?
-          instruments.map(instrument => <option key={instrument._id} value="lookingForInstrument" name="lookingForInstrument">{instrument.name}</option>)
-          :
-          <p>Just a minute...</p>
-        }
+          &&
+          instruments.map(instrument => <option key={instrument._id} value="lookingForInstrument" name="lookingForInstrument">{instrument.name}</option>)}
       </select>
     </div>
   );
