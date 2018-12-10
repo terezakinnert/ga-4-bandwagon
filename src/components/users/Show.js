@@ -26,7 +26,10 @@ class Show extends React.Component {
           <div>
             <h3>{user.username}</h3>
             <img src={user.image} width="400px" />
-            <div>Looking/Not looking: {user.lookingForBands}</div>
+            <div>
+              {user.lookingForBands && <p>Looking for a band to join</p>}
+              {!user.lookingForBands && <p>Not looking for a band to join</p>}
+            </div>
             <div>Location: {user.location}</div>
             <div>Playing: <ul>{user.instrumentsPlayed && user.instrumentsPlayed.map(inst => <li key={inst._id}>{inst.name}</li>)}</ul></div>
             <p>Website: {user.website}</p>

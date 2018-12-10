@@ -37,7 +37,10 @@ class Show extends React.Component {
             <div>
               <h3>{band.name}</h3>
               <img src={band.image} width="400px" />
-              <div>Looking/Not looking</div>
+              <div>
+                {band.lookingForMembers && <p>Looking for members</p>}
+                {!band.lookingForMembers && <p>Not looking for members</p>}
+              </div>
               <div>Which instrument: {band.lookingForInstrument}</div>
               <div>
                 <p>Current members:</p>
