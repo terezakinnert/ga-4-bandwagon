@@ -9,9 +9,9 @@ const bandSchema = mongoose.Schema({
   members: [String],
   website: String,
   genres: [String],
-  influences: [String]
+  influences: [String],
   // usersFavourited: String
-  // createdBy/owner of the band
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('Band', bandSchema);

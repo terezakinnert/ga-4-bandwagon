@@ -30,11 +30,11 @@ router.route('/users/:userId')
   .put(secureRoute, user.userUpdate)
   .delete(secureRoute, user.userDelete);
 
-router.route('/users/:userId/instruments')
-  .post(secureRoute, user.addInstrument);
+// router.route('/users/:userId/instruments')
+//   .post(secureRoute, user.addInstrument);
 
-router.route('/users/:userId/instruments/:instrumentId')
-  .delete(secureRoute, user.deleteInstrument);
+// router.route('/users/:userId/instruments/:instrumentId')
+//   .delete(secureRoute, user.deleteInstrument);
 
 router.route('/messages')
   .get(messages.index)

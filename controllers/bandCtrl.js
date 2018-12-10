@@ -2,6 +2,7 @@ const Band = require('../models/band');
 
 function indexRoute(req, res, next) {
   Band.find()
+    .populate('createdBy')
     .then(bands => res.json(bands))
     .catch(next);
 }
@@ -9,11 +10,13 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next) {
   Band
     .findById(req.params.id)
+    .populate('createdBy')
     .then(band => res.json(band))
     .catch(next);
 }
 
 function createRoute(req, res, next) {
+  req.body.owner = req.tokenUserId;
   Band
     .create(req.body)
     .then(band => res.status(201).json(band))

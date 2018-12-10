@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
   email: String,
   password: String,
   location: String,
-  instrumentsPlayed: [{ type: mongoose.Schema.ObjectId, ref: 'Instrument' }],
+  instrumentsPlayed: { type: mongoose.Schema.ObjectId, ref: 'Instrument' },
   lookingForBands: Boolean,
   image: String,
   website: String,
@@ -26,6 +26,12 @@ userSchema.pre('save', function() {
 });
 
 // bandsCreated virtual
+userSchema.virtual('bandsCreated', {
+  ref: 'Band',
+  localField: '_id',
+  foreignField: 'createdBy'
+});
+
 
 userSchema.set('toJSON', {
   virtuals: true
