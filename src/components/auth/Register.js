@@ -1,5 +1,6 @@
 import React  from 'react';
 import axios from 'axios';
+import Select from './SelectRegister';
 
 class Register extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class Register extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleSubmit(event){
     event.preventDefault();
     // console.log( 'register', this.state);
@@ -22,7 +24,16 @@ class Register extends React.Component {
     this.setState({ [name]: value });
   }
 
+  componentDidMount() {
+    axios.get('/api/instruments')
+      .then(result => {
+        this.setState({ instruments: result.data });
+        // console.log('instruments?', this.state.instruments);
+      });
+  }
+
   render() {
+    const instruments = this.state.instruments;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -37,6 +48,8 @@ class Register extends React.Component {
 
           <label htmlFor="location">Location</label>
           <input name="location" type="text" onChange={this.handleChange} value={this.state.location || ''} />
+
+          <Select onChange={this.handleChange} instruments={instruments} instrumentsPlayed={this.state.instrumentsPlayed || ''} />
 
           <span>Want to join a band?</span>
           <div>
