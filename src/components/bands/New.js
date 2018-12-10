@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 
-// import { handleChange } from '../../lib/common';
 import { getToken } from '../../lib/auth';
 import Select from './Select';
 
@@ -13,12 +12,11 @@ class New extends React.Component {
     this.state = {};
     this.handleChange = this.handleChange.bind(this);
     this.createBand = this.createBand.bind(this);
-    // this.getInstruments = this.getInstruments.bind(this);
   }
 
   handleChange({ target: { name, value }}) {
     this.setState({ [name]: value });
-    console.log('name:value', name, value);
+    // console.log('name:value', name, value);
   }
 
   createBand() {
@@ -26,7 +24,7 @@ class New extends React.Component {
     axios.post('/api/bands', this.state, { headers: { Authorization: `Bearer ${getToken()}` }})
       .then(result => {
         this.props.history.push(`/bands/${result.data._id}`);
-        console.log('this.state', this.state.band);
+        // console.log('this.state', this.state.band);
       });
   }
 
@@ -34,7 +32,7 @@ class New extends React.Component {
     axios.get('/api/instruments')
       .then(result => {
         this.setState({ instruments: result.data });
-        console.log('instruments?', this.state.instruments);
+        // console.log('instruments?', this.state.instruments);
       });
   }
 
@@ -58,9 +56,6 @@ class New extends React.Component {
             <input name="lookingForMembers" type="radio" id="no" onChange={this.handleChange} value="false" />
             <label htmlFor="false">Not right now</label>
           </div>
-
-          {/* <label htmlFor="instruments">What instruments do you need your new member to play?</label>
-          <input name="instruments" type="text" onChange={this.handleChange} value={this.state.instruments || ''} /> */}
 
           <Select onChange={this.handleChange} instruments={instruments} lookingForInstrument={this.state.lookingForInstrument || ''} />
 
