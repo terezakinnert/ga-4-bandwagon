@@ -19,3 +19,7 @@ export function deleteToken() {
 export function isAuthenticated() {
   return !!getToken();
 }
+
+export function getLoggedInUser() {
+  return decodeToken().sub;
+}

@@ -31,3 +31,8 @@ added isAuthenticated to header links; logout doesn't redirect me
 Rob helped sort out the select sending data back to the api (had to add all props to Select and not options, pass down lookingForInstruments, and onChange (=> had it on props in New.js, but not taken in Select.js))
 sorted instruments alphabetically on the backend (20min). There is mongoose .sort method!!
 edit form is not rendering (same as in wonders, though). Haven't found a typo. Something to do with lifecycles? Not sure how to get band data to populate before I edit and post
+OMG there was a typo in the link on the show page (kept wonders in the url)!!! Still doesn't send to db though
+added a cancel button to new and edit pages
+after break: fixed logout (deleted token from l.storage before, but didn't update the page or redirect) => forgot to bind handle logout
+also fixed edit form - left createBand on onSubmit as opposed to updateBand (even though I was sure it was there correctly).
+Breaks are good (had lunch, read an article, got more water and chatted to Theo for a bit, got a mini mince pie)
