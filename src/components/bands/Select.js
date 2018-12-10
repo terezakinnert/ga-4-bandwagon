@@ -1,8 +1,7 @@
 import React from 'react';
-// import axios from 'axios';
 
 function Select({ instruments }) {
-  console.log('instruments', instruments);
+  // console.log('instruments', instruments);
   return(
     <div>
       <label htmlFor="lookingForInstrument">Instrument you are looking for</label>
@@ -17,11 +16,3 @@ function Select({ instruments }) {
 }
 
 export default Select;
-
-
-// class Select extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {};
-//   }
-// render(){}

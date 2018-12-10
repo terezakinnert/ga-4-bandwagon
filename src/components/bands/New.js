@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 
-import { handleChange } from '../../lib/common';
+// import { handleChange } from '../../lib/common';
 import { getToken } from '../../lib/auth';
 import Select from './Select';
 
@@ -11,9 +11,13 @@ class New extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.handleChange = handleChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.createBand = this.createBand.bind(this);
-    this.getInstruments = this.getInstruments.bind(this);
+    // this.getInstruments = this.getInstruments.bind(this);
+  }
+
+  handleChange({ target: { name, value }}) {
+    this.setState({ [name]: value });
   }
 
   createBand() {
@@ -21,19 +25,20 @@ class New extends React.Component {
     axios.post('/api/bands', this.state, { headers: { Authorization: `Bearer ${getToken()}` }})
       .then(result => {
         this.props.history.push(`/bands/${result.data._id}`);
-        console.log('this.state', this.state);
+        console.log('this.state', this.state.band);
       });
   }
 
-  getInstruments() {
+  componentDidMount() {
     axios.get('/api/instruments')
       .then(result => {
         this.setState({ instruments: result.data });
-        console.log('instruments?', this.state);
+        console.log('instruments?', this.state.instruments);
       });
   }
 
   render() {
+    const instruments = this.state.instruments;
     return(
       <div>
         <form onSubmit={this.createBand}>
@@ -56,7 +61,7 @@ class New extends React.Component {
           {/* <label htmlFor="instruments">What instruments do you need your new member to play?</label>
           <input name="instruments" type="text" onChange={this.handleChange} value={this.state.instruments || ''} /> */}
 
-          <Select onChange={this.handleChange} onClick={this.getInstruments} instruments={this.instruments} />
+          <Select onChange={this.handleChange} instruments={instruments} />
 
           <label htmlFor="image">Image URL</label>
           <input name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />
