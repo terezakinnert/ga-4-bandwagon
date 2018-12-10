@@ -14,7 +14,7 @@ class Show extends React.Component {
     axios.get(`/api/bands/${this.props.match.params.id}`)
       .then(result => {
         this.setState({ band: result.data });
-        console.log('band?', this.state.band);
+        // console.log('band?', this.state.band);
       });
   }
 
@@ -22,7 +22,7 @@ class Show extends React.Component {
     axios.delete(`/api/bands/${this.props.match.params.id}`,
       { headers: { Authorization: `Bearer ${getToken()}` }})
       .then(() => {
-        console.log('this.props', this.props);
+        // console.log('this.props', this.props);
         this.props.history.push('/bands');
       });
   }

@@ -2,7 +2,9 @@ const Instrument = require('../models/instrument');
 
 function indexRoute(req, res, next) {
   Instrument.find()
+    .sort('name')
     .then(instruments => res.json(instruments))
+    // .then(instruments.sort((a, b) => a - b))
     .catch(next);
 }
 
