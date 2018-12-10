@@ -18,6 +18,7 @@ class New extends React.Component {
 
   handleChange({ target: { name, value }}) {
     this.setState({ [name]: value });
+    console.log('name:value', name, value);
   }
 
   createBand() {
@@ -61,7 +62,7 @@ class New extends React.Component {
           {/* <label htmlFor="instruments">What instruments do you need your new member to play?</label>
           <input name="instruments" type="text" onChange={this.handleChange} value={this.state.instruments || ''} /> */}
 
-          <Select onChange={this.handleChange} instruments={instruments} />
+          <Select onChange={this.handleChange} instruments={instruments} lookingForInstrument={this.state.lookingForInstrument || ''} />
 
           <label htmlFor="image">Image URL</label>
           <input name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />

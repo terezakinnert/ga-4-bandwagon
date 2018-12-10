@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { getToken } from '../../lib/auth';
 
 class Show extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -17,7 +19,8 @@ class Show extends React.Component {
   }
 
   handleDelete() {
-    axios.delete(`/api/bands/${this.props.match.params.id}`)
+    axios.delete(`/api/bands/${this.props.match.params.id}`,
+      { headers: { Authorization: `Bearer ${getToken()}` }})
       .then(() => {
         console.log('this.props', this.props);
         this.props.history.push('/bands');
