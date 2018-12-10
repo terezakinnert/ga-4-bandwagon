@@ -16,7 +16,7 @@ class Edit extends React.Component {
 
   handleChange({ target: { name, value }}) {
     this.setState({ [name]: value });
-    console.log('name:value', name, value);
+    // console.log('name:value', name, value);
   }
 
   updateBand() {
@@ -42,7 +42,7 @@ class Edit extends React.Component {
     console.log('are we here?');
     return(
       <div>
-        <form onSubmit={this.createBand}>
+        <form onSubmit={this.updateBand}>
           <label htmlFor="name">Name</label>
           <input name="name" type="name" onChange={this.handleChange} value={this.state.name || ''} />
 
