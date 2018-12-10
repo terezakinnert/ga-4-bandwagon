@@ -3,12 +3,11 @@ import { Link, withRouter } from 'react-router-dom';
 
 function BandBox({ band }) {
   return (
-    <Link to={`/bands/${band._id}`}>
-      <section className="band-box">
-        <h3>{band.name}</h3>
-        <img src={band.image} width="200px" />
-      </section>
-    </Link>
+    <section className="band-box">
+      <Link to={`/bands/${band._id}`}><h4>{band.name}</h4></Link>
+      <img src={band.image} width="200px" />
+      <div>Looking for: {band.lookingForInstrument}</div>
+    </section>
   );
 }
 

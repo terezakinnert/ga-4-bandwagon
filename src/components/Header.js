@@ -6,6 +6,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleLogout() {

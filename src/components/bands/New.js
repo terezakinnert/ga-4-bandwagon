@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import { getToken } from '../../lib/auth';
 import Select from './Select';
@@ -75,6 +75,7 @@ class New extends React.Component {
           <input name="influences" type="text" onChange={this.handleChange} value={this.state.influences || ''} />
 
           <button>Add this band</button>
+          <Link to={`/bands/${this.props.match.params.id}`}><div>Cancel</div></Link>
         </form>
       </div>
     );
