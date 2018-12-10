@@ -25,3 +25,9 @@ started register on frontend, but doesn't work (can't read state of undefined)
 did a bit more testing (show and create on bands; show doesn't return 200 response, even though it does in insomnia)
 added secure route to routes
 faffed
+
+Mon 10/12
+added isAuthenticated to header links; logout doesn't redirect me
+Rob helped sort out the select sending data back to the api (had to add all props to Select and not options, pass down lookingForInstruments, and onChange (=> had it on props in New.js, but not taken in Select.js))
+sorted instruments alphabetically on the backend (20min). There is mongoose .sort method!!
+edit form is not rendering (same as in wonders, though). Haven't found a typo. Something to do with lifecycles? Not sure how to get band data to populate before I edit and post

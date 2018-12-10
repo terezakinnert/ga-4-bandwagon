@@ -47,7 +47,7 @@ class Show extends React.Component {
               <p>Influences: {band.influences}</p>
             </div>
             <div>
-              <Link to={`/wonders/${band._id}/edit`}><div>Edit</div></Link>
+              <Link to={`/bands/${band._id}/edit`}><div>Edit</div></Link>
               <div onClick={this.handleDelete}>Delete</div>
               <Link to="/bands"><div>Go Back</div></Link>
             </div>

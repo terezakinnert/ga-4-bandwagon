@@ -12,6 +12,7 @@ import Edit from './components/bands/Edit';
 import Show from './components/bands/Show';
 import UserIndex from './components/users/Index';
 import UserShow from './components/users/Show';
+import Profile from './components/users/Show';
 
 class App extends React.Component {
   render() {
@@ -30,6 +31,7 @@ class App extends React.Component {
               <Route path='/bands/:id' component={Show} />
               <Route exact path='/users' component={UserIndex} />
               <Route path='/users/:id' component={UserShow} />
+              <Route path='/profile' component={Profile} />
             </Switch>
           </main>
         </div>

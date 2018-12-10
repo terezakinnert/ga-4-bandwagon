@@ -17,7 +17,7 @@ class Header extends React.Component {
     return(
       <nav>
         <Link to="/">Home</Link>
-        <Link to="/bands">All Bands</Link>
+        {isAuthenticated() && <Link to="/bands">All Bands</Link>}
         {isAuthenticated() && <Link to="/bands/new">Add Your Band</Link>}
         {isAuthenticated() && <Link to="/users">All Musicians</Link>}
         {!isAuthenticated() && <Link to="/login">Log In</Link>}
