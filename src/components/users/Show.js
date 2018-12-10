@@ -10,30 +10,28 @@ class Show extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`/api/bands/${this.props.match.params.id}`)
+    axios.get(`/api/users/${this.props.match.params.id}`)
       .then(result => {
-        this.setState({ band: result.data });
-        console.log('band?', this.state.band);
+        this.setState({ user: result.data });
+        console.log('user?', this.state.user);
       });
   }
 
   render() {
-    const band = this.state.band;
+    const user = this.state.user;
     return(
       <main>
-        {band
+        {user
           ?
           <div>
-            <h3>{band.name}</h3>
-            <img src={band.image} width="400px" />
-            <div>Looking/Not looking</div>
-            <div>Which instrument: {band.lookingForInstrument}</div>
-            <div>
-              <p>Current members:</p>
-            </div>
-            <p>Website: {band.website}</p>
-            <p>Genres: {band.genres}</p>
-            <p>Influences: {band.influences}</p>
+            <h3>{user.username}</h3>
+            <img src={user.image} width="400px" />
+            <div>Looking/Not looking: {user.lookingForBands}</div>
+            <div>Location: {user.location}</div>
+            <div>Playing: <ul>{user.instrumentsPlayed && user.instrumentsPlayed.map(inst => <li key={inst._id}>{inst.name}</li>)}</ul></div>
+            <p>Website: {user.website}</p>
+            <p>Genres: {user.genres}</p>
+            <p>Influences: {user.influences}</p>
           </div>
           :
           <p>Just a sec...</p>

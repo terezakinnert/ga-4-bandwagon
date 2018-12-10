@@ -10,6 +10,7 @@ import Index from './components/bands/Index';
 import New from './components/bands/New';
 import Show from './components/bands/Show';
 import UserIndex from './components/users/Index';
+import UserShow from './components/users/Show';
 
 class App extends React.Component {
   render() {
@@ -23,9 +24,10 @@ class App extends React.Component {
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/bands' component={Index} />
-              <Route exact path='/users' component={UserIndex} />
               <Route exact path='/bands/new' component={New} />
-              <Route exact path='/bands/:id' component={Show} />
+              <Route path='/bands/:id' component={Show} />
+              <Route exact path='/users' component={UserIndex} />
+              <Route path='/users/:id' component={UserShow} />
             </Switch>
           </main>
         </div>

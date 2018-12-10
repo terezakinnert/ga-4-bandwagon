@@ -5,7 +5,7 @@ function UserBox({ user }) {
   return (
     <Link to={`/users/${user._id}`}>
       <section>
-        <h3>{user.name}</h3>
+        <h3>{user.username}</h3>
         <img src={user.image} width="200px" />
       </section>
     </Link>

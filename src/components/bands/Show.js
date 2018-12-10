@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-
 class Show extends React.Component {
   constructor(props) {
     super(props);
@@ -14,6 +13,14 @@ class Show extends React.Component {
       .then(result => {
         this.setState({ band: result.data });
         console.log('band?', this.state.band);
+      });
+  }
+
+  handleDelete() {
+    axios.delete(`/api/bands/${this.props.match.params.id}`)
+      .then(() => {
+        console.log('this.props', this.props);
+        this.props.history.push('/bands');
       });
   }
 
@@ -38,6 +45,7 @@ class Show extends React.Component {
             </div>
             <div>
               <Link to={`/wonders/${band._id}/edit`}><div>Edit</div></Link>
+              <div onClick={this.handleDelete}>Delete</div>
               <Link to="/bands"><div>Go Back</div></Link>
             </div>
           </div>

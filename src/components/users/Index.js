@@ -15,12 +15,12 @@ class UserIndex extends React.Component {
   }
 
   render() {
+    const users = this.state.users;
     return(
       <section>
         <h1>All the Musicians</h1>
         <div>
-          {this.state.users && this.state.users.map(
-            user => <UserBox key={user._id} user={user} />
+          {users && users.map(user => <UserBox key={user._id} user={user} />
           )}
         </div>
       </section>
