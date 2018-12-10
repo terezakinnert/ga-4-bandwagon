@@ -11,16 +11,18 @@ class Edit extends React.Component {
     this.state = {};
     this.handleChange = this.handleChange.bind(this);
     this.updateBand = this.updateBand.bind(this);
+    console.log('this.state', this.state);
   }
 
   handleChange({ target: { name, value }}) {
     this.setState({ [name]: value });
-    // console.log('name:value', name, value);
+    console.log('name:value', name, value);
   }
 
   updateBand() {
     event.preventDefault();
-    axios.put(`/api/bands/${this.props.match.params.id}`, this.state, { headers: { Authorization: `Bearer ${getToken()}` }})
+    axios.put(`/api/bands/${this.props.match.params.id}`, this.state,
+      { headers: { Authorization: `Bearer ${getToken()}` }})
       .then(result => {
         this.props.history.push(`/bands/${result.data._id}`);
         console.log('this.state', this.state.band);
@@ -31,12 +33,13 @@ class Edit extends React.Component {
     axios.get('/api/instruments')
       .then(result => {
         this.setState({ instruments: result.data });
-        // console.log('instruments?', this.state.instruments);
+        console.log('instruments?', this.state.instruments);
       });
   }
 
   render() {
     const instruments = this.state.instruments;
+    console.log('are we here?');
     return(
       <div>
         <form onSubmit={this.createBand}>
