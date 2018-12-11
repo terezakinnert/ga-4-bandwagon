@@ -18,15 +18,32 @@ class Header extends React.Component {
     const user = decodeToken();
     console.log('user', user);
     return(
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/bands">Browse Bands</Link>
-        {isAuthenticated() && <Link to="/bands/new">Add Your Band</Link>}
-        <Link to="/users">Browse Musicians</Link>
-        {!isAuthenticated() && <Link to="/login">Log In</Link>}
-        {!isAuthenticated() && <Link to="/register">Sign Up</Link>}
-        {isAuthenticated() && <Link to={`/users/${user.sub}`}>Profile</Link>}
-        {isAuthenticated() && <a onClick={this.handleLogout}>Log Out</a>}
+      <nav classNameName="navbar">
+        <div classNameName="container">
+          <div classNameName="navbar-brand">
+            <span className="navbar-burger burger" data-target="navbarMenu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenu" className="navbar-menu">
+            <div className="navbar-end">
+              <div className="tabs is-right">
+                <ul>
+                  <li className="is-active"><Link to="/">Home</Link></li>
+                  <li><Link to="/bands">Browse Bands</Link></li>
+                  <li>{isAuthenticated() && <Link to="/bands/new">Add Your Band</Link>}</li>
+                  <li><Link to="/users">Browse Musicians</Link></li>
+                  <li>{!isAuthenticated() && <Link to="/login">Log In</Link>}</li>
+                  <li>{!isAuthenticated() && <Link to="/register">Sign Up</Link>}</li>
+                  <li>{isAuthenticated() && <Link to={`/users/${user.sub}`}>Profile</Link>}</li>
+                  <li>{isAuthenticated() && <a onClick={this.handleLogout}>Log Out</a>}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </nav>
     );
   }
