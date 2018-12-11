@@ -7,11 +7,6 @@ function indexRoute(req, res, next) {
     .catch(next);
 }
 
-// function indexByInstrument(req, res, next) {
-//   Band
-//     .find({ lookingForInstrument:  })
-// }
-
 function showRoute(req, res, next) {
   Band
     .findById(req.params.id)

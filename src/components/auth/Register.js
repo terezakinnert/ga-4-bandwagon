@@ -12,10 +12,10 @@ class Register extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    // console.log( 'register', this.state);
+    console.log( 'register before axios', this.state);
     axios.post('/api/register', this.state)
       .then(result => {
-        console.log('register', result.data);
+        console.log('register after axios', result.data);
         this.props.history.push('/login');
       });
   }
@@ -34,7 +34,7 @@ class Register extends React.Component {
 
   render() {
     const instruments = this.state.instruments;
-    console.log('this state', this.state);
+    console.log('this state in render', this.state);
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

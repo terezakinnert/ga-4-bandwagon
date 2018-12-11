@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Select({ instruments, onChange, instrumentsPlayed }) {
-  console.log('instruments', instruments);
+  // console.log('instruments', instruments);
   return(
     <div>
       <label htmlFor="instrumentsPlayed">What are you playing</label>

@@ -6,6 +6,7 @@ const user = require('../controllers/userCtrl');
 const messages = require('../controllers/messagesCtrl');
 const instruments = require('../controllers/instrumentCtrl');
 const secureRoute = require('../lib/secureRoute');
+const compatibles = require('../controllers/compatibleCtrl');
 
 router.route('/bands')
   .get(band.bandIndex)
@@ -49,5 +50,8 @@ router.route('/instruments')
 
 router.route('/instruments/:instrumentId')
   .delete(secureRoute, instruments.delete);
+
+router.route('/findbands')
+  .get(compatibles.bandsByInstrument);
 
 module.exports = router;
