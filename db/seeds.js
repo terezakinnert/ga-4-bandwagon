@@ -50,7 +50,7 @@ const userData = [
     email: 'b@b',
     password: 'pass',
     location: 'Chicago',
-    instrumentsPlayed: [instrumentIds[0], instrumentIds[2]],
+    instrumentsPlayed: instrumentIds[0],
     lookingForBands: true,
     _id: userIds[0]
   }, {

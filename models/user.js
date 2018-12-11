@@ -5,7 +5,7 @@ const userSchema = mongoose.Schema({
   username: String,
   email: String,
   password: String,
-  location: String,
+  // location: String,
   instrumentsPlayed: { type: mongoose.Schema.ObjectId, ref: 'Instrument' },
   lookingForBands: Boolean,
   image: String,

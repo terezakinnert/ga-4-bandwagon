@@ -14,4 +14,8 @@ const bandSchema = mongoose.Schema({
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
+bandSchema.set('toJSON', {
+  virtuals: true
+});
+
 module.exports = mongoose.model('Band', bandSchema);

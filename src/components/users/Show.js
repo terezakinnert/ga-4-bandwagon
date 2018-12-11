@@ -19,6 +19,7 @@ class Show extends React.Component {
 
   render() {
     const user = this.state.user;
+    // console.log('bands created', user.bandsCreated);
     return(
       <main>
         {user
