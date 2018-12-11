@@ -54,4 +54,7 @@ router.route('/instruments/:instrumentId')
 router.route('/findbands')
   .get(compatibles.bandsByInstrument);
 
+router.route('/findmusicians')
+  .get(compatibles.usersByInstrument);
+
 module.exports = router;
