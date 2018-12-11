@@ -10,8 +10,9 @@ function bandsByInstrument(req, res, next) {
 
 function usersByInstrument(req, res, next) {
   User.findOne({ instrumentsPlayed: req.body.instrument })
+    .populate('instrumentsPlayed')
     .then(users => res.json(users))
-    .then(console.log('users found'))
+    .then(console.log('req.body', req.body))
     .catch(next);
 }
 

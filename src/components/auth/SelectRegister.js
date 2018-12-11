@@ -9,7 +9,7 @@ function Select({ instruments, onChange, instrumentsPlayed }) {
         <option value="instrumentsPlayed" name="instrumentsPlayed">Select one...</option>
         {instruments
           &&
-          instruments.map(instrument => <option key={instrument._id} name="instrumentsPlayed">{instrument.name}</option>)}
+          instruments.map(instrument => <option key={instrument._id} name="instrumentsPlayed" value={instrument._id}>{instrument.name}</option>)}
       </select>
     </div>
   );
