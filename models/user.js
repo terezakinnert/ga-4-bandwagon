@@ -25,7 +25,6 @@ userSchema.pre('save', function() {
   }
 });
 
-// bandsCreated virtual
 userSchema.virtual('bandsCreated', {
   ref: 'Band',
   localField: '_id',
@@ -38,11 +37,3 @@ userSchema.set('toJSON', {
 });
 
 module.exports = mongoose.model('User', userSchema);
-
-
-// const instrumentSchema = mongoose.Schema({
-//   instrument: [{
-//     type: String,
-//     enum: ['Lead guitar', 'Rhythm guitar', 'Drums', 'Bass', 'Vocals', 'Keyboards', 'Saxophone', 'Clarinet', 'Piano']
-//   }]
-// });

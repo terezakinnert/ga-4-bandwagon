@@ -9,3 +9,30 @@
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Oswald', sans-serif;
 }
+
+.login-container {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.login-box {
+  width: 5vw;
+  height: 3vh;
+}
+
+
+.home-container {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.home-box {
+  width: 20vw;
+  height: 10vh;
+}

@@ -31,6 +31,9 @@ function deleteRoute(req, res, next) {
     .catch(next);
 }
 
+// ======
+// Adding and removing instruments to your profile (as if they were comments)
+// ======
 // function addInstrument(req, res, next) {
 //   User
 //     .findById(req.params.userId)

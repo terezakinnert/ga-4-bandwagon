@@ -34,6 +34,7 @@ class Register extends React.Component {
 
   render() {
     const instruments = this.state.instruments;
+    console.log('this state', this.state);
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -48,6 +49,8 @@ class Register extends React.Component {
 
           <label htmlFor="location">Location</label>
           <input name="location" type="text" onChange={this.handleChange} value={this.state.location || ''} />
+
+
 
           <Select onChange={this.handleChange} instruments={instruments} instrumentsPlayed={this.state.instrumentsPlayed || ''} />
 
@@ -81,3 +84,5 @@ class Register extends React.Component {
 }
 
 export default Register;
+
+// <Select onChange={this.handleChange} instruments={instruments} lookingForInstrument={this.state.lookingForInstrument || ''} />

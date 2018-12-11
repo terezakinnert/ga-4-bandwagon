@@ -7,6 +7,11 @@ function indexRoute(req, res, next) {
     .catch(next);
 }
 
+// function indexByInstrument(req, res, next) {
+//   Band
+//     .find({ lookingForInstrument:  })
+// }
+
 function showRoute(req, res, next) {
   Band
     .findById(req.params.id)
@@ -14,18 +19,8 @@ function showRoute(req, res, next) {
     .catch(next);
 }
 
-// function createRoute(req, res, next) {
-//   req.body.owner = req.tokenUserId;
-//   Band
-//     .create(req.body)
-//     // .then(band => band.populate('createdBy'))
-//     .then(band => res.status(201).json(band))
-//     .catch(next);
-// }
-
 function createRoute(req, res, next) {
   req.body.createdBy = req.tokenUserId;
-
   Band.create(req.body)
     .then(band => {
       console.log('creating band, req.body is', req.body);

@@ -38,6 +38,7 @@ class New extends React.Component {
 
   render() {
     const instruments = this.state.instruments;
+    console.log('this state', this.state);
     return(
       <div>
         <form onSubmit={this.createBand}>
