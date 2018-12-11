@@ -10,22 +10,31 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next) {
   Band
     .findById(req.params.id)
-    .populate({
-      path: 'band',
-      populate: {
-        path: 'createdBy'
-      }
-    })
     .then(band => res.json(band))
     .catch(next);
 }
 
+// function createRoute(req, res, next) {
+//   req.body.owner = req.tokenUserId;
+//   Band
+//     .create(req.body)
+//     // .then(band => band.populate('createdBy'))
+//     .then(band => res.status(201).json(band))
+//     .catch(next);
+// }
+
 function createRoute(req, res, next) {
-  req.body.owner = req.tokenUserId;
-  Band
-    .create(req.body)
-    // .then(band => band.populate('createdBy'))
-    .then(band => res.status(201).json(band))
+  req.body.createdBy = req.tokenUserId;
+
+  Band.create(req.body)
+    .then(band => {
+      console.log('creating band, req.body is', req.body);
+      res.status(201).json(band);
+    })
+    .then(band => {
+      Band.populate(band, 'createdBy');
+      res.json(band);
+    })
     .catch(next);
 }
 
