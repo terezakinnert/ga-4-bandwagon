@@ -4,6 +4,7 @@
 * {
   font-family: 'Roboto', serif;
   text-align: center;
+  color: #333333;
   a {
     color: #333333;
   }
@@ -40,23 +41,41 @@ h1,h2,h3,h4,h5,h6 {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  color: white;
 }
 
 .login-box {
   width: 5vw;
   height: 3vh;
+  color: white;
 }
 
+.signup-button {
+    margin-right: 30%;
+  }
+//
+// .signup-button {
+//   margin-left: 30%;
+// }
 
-.home-container {
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
+// .home-container {
+//   display: flex;
+//   /* flex-direction: column; */
+//   flex-wrap: wrap;
+//   align-items: center;
+//   justify-content: space-evenly;
+// }
+//
+// .home-box {
+//   width: 20vw;
+//   height: 10vh;
+// }
+
+
+.is-4 {
+  margin: 2rem;
 }
 
-.home-box {
-  width: 20vw;
-  height: 10vh;
+.how-it-works {
+  margin: 2rem;
 }
