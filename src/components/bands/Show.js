@@ -43,11 +43,15 @@ class Show extends React.Component {
               </div>
               <div>Which instrument: {band.lookingForInstrument}</div>
               <div>
-                <p>Current members:</p>
+                <div>Current members:
+                  {band.members && band.members.map(member => <p key={member}>{member}</p>)}
+                </div>
               </div>
               <p>Website: {band.website}</p>
               <p>Genres: {band.genres}</p>
-              <p>Influences: {band.influences}</p>
+              <p>Influences: 
+                {band.influences && band.influences.map(influence => <span key={influence}>{influence}, </span>)}
+              </p>
             </div>
             <div>
               <Link to={`/bands/${band._id}/edit`}><div>Edit</div></Link>

@@ -11,7 +11,8 @@ const userSchema = mongoose.Schema({
   image: String,
   website: String,
   genres: [String],
-  influences: [String]
+  influences: [String],
+  about: String
   // bandsFavourited: String
 });
 

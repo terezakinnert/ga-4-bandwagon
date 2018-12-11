@@ -10,6 +10,7 @@ const bandSchema = mongoose.Schema({
   website: String,
   genres: [String],
   influences: [String],
+  about: String,
   // usersFavourited: String
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
