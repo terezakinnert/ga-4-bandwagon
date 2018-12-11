@@ -31,7 +31,6 @@ class Show extends React.Component {
               {user.lookingForBands && <p>Looking for a band to join</p>}
               {!user.lookingForBands && <p>Not looking for a band to join</p>}
             </div>
-            <div>Location: {user.location}</div>
             <div>Playing: {user.instrumentsPlayed && user.instrumentsPlayed.name}</div>
             <p>Website: {user.website}</p>
             <p>Genres: {user.genres}</p>

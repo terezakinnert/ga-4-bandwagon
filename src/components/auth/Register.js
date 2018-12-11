@@ -47,11 +47,6 @@ class Register extends React.Component {
           <label>Password</label>
           <input name="password" type="password" onChange={this.handleChange} value={this.state.password || ''} />
 
-          <label htmlFor="location">Location</label>
-          <input name="location" type="text" onChange={this.handleChange} value={this.state.location || ''} />
-
-
-
           <Select onChange={this.handleChange} instruments={instruments} instrumentsPlayed={this.state.instrumentsPlayed || ''} />
 
           <span>Want to join a band?</span>
