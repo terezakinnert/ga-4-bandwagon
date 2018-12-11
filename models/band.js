@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const bandSchema = mongoose.Schema({
   name: String,
-  location: String,
+  // location: String,
   lookingForMembers: Boolean,
   lookingForInstrument: String,
   image: String,
@@ -15,9 +15,3 @@ const bandSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('Band', bandSchema);
-
-
-// lookingForInstrument: [{
-//   instrument: [{ type: mongoose.Schema.ObjectId, ref: 'Instrument' } ],
-//   text: String
-// }],

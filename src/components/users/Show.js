@@ -31,10 +31,11 @@ class Show extends React.Component {
               {!user.lookingForBands && <p>Not looking for a band to join</p>}
             </div>
             <div>Location: {user.location}</div>
-            <div>Playing: {user.instrumentsPlayed.name}</div>
+            <div>Playing: {user.instrumentsPlayed && user.instrumentsPlayed.name}</div>
             <p>Website: {user.website}</p>
             <p>Genres: {user.genres}</p>
             <p>Influences: {user.influences}</p>
+            <p>Bands created: {user.bandsCreated.name}</p>
           </div>
           :
           <p>Just a sec...</p>
