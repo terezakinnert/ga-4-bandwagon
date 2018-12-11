@@ -9,9 +9,30 @@
   }
 }
 
+.home-title {
+  margin: 4rem;
+  padding: 2rem;
+  color: #FFFFFF;
+}
+
+.home-subtitle {
+  margin: 3rem;
+  padding: 1rem;
+  color: #000000;
+}
+
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Oswald', sans-serif;
 }
+
+.has-bg-img {
+  background: url('https://images.unsplash.com/photo-1501962679900-bea61483313b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80');
+  background-position: center center;
+  background-repeat:  no-repeat;
+  background-size:cover;
+  opacity: 0.85;
+}
+
 
 .login-container {
   display: flex;

@@ -10,12 +10,12 @@ class Home extends React.Component {
   render() {
     return(
       <div>
-        <section className="hero is-medium is-bold">
+        <section className="hero has-bg-img is-fullheight is-bold">
           <div className="hero-head">
             <div className="hero-body">
               <div className="container has-text-centered">
-                <h1 className="title">Welcome to BandWagon!</h1>
-                <h2 className="subtitle">Find your next bandmates</h2>
+                <h1 className="title is-1 home-title">Welcome to BandWagon!</h1>
+                <h2 className="subtitle is-2 home-subtitle">Find your new bandmate</h2>
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ class CompatibleBands extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/api/bands')
+    axios.get('/api/findbands')
       .then(result => this.setState({ bands: result.data }));
   }
 
