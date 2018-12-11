@@ -31,7 +31,7 @@ class Show extends React.Component {
               {!user.lookingForBands && <p>Not looking for a band to join</p>}
             </div>
             <div>Location: {user.location}</div>
-            <div>Playing: <ul>{user.instrumentsPlayed && user.instrumentsPlayed.map(inst => <li key={inst._id}>{inst.name}</li>)}</ul></div>
+            <div>Playing: {user.instrumentsPlayed.name}</div>
             <p>Website: {user.website}</p>
             <p>Genres: {user.genres}</p>
             <p>Influences: {user.influences}</p>

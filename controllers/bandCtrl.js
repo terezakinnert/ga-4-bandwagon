@@ -16,7 +16,7 @@ function showRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
-  req.body.owner = req.tokenUserId;
+  // req.body.owner = req.tokenUserId;
   Band
     .create(req.body)
     .then(band => res.status(201).json(band))
