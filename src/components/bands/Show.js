@@ -14,7 +14,7 @@ class Show extends React.Component {
     axios.get(`/api/bands/${this.props.match.params.id}`)
       .then(result => {
         this.setState({ band: result.data });
-        // console.log('band?', this.state.band);
+        console.log('band after axios get?', this.state.band);
       });
   }
 
@@ -29,6 +29,7 @@ class Show extends React.Component {
 
   render() {
     const band = this.state.band;
+    console.log('band in show render', band);
     return(
       <main>
         {band
