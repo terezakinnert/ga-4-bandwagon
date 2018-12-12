@@ -4,13 +4,13 @@ import { Link, withRouter } from 'react-router-dom';
 function UserBox({ user }) {
   return (
     <Link to={`/users/${user._id}`}>
-      <section>
-        <div className="columns is-centered is-multiline">
-          <div className="column is-3">
+      <div className="columns is-centered is-multiline">
+        <div className="column is-3">
+          <div>
             <div className="card">
               <div className="card-image">
                 <figure className="image is-3by3">
-                  <img src={user.image} width="200px" alt={user.username}/>
+                  <img src={user.image} alt={user.username}/>
                 </figure>
               </div>
               <div className="card-content">
@@ -19,7 +19,6 @@ function UserBox({ user }) {
                     <h4 className="title is-4">{user.username}</h4>
                   </div>
                 </div>
-
                 <div className="content">
                   {user.username}&apos;s instrument: {user.instrumentsPlayed && user.instrumentsPlayed.name}
                 </div>
@@ -27,10 +26,7 @@ function UserBox({ user }) {
             </div>
           </div>
         </div>
-
-
-
-      </section>
+      </div>
     </Link>
   );
 }
