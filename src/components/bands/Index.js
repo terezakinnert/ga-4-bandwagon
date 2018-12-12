@@ -16,6 +16,7 @@ class BandIndex extends React.Component {
   }
 
   render() {
+    console.log('bands in render?', this.state.bands);
     return(
       <section>
         <h1 className="title is-1">Browse Bands</h1>

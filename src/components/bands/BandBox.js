@@ -2,12 +2,12 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 function BandBox({ band }) {
-  console.log('band.lookingForInstrument', band.lookingForInstrument.name);
+  console.log('band.lookingForInstrument in bandbox', band.lookingForInstrument);
   return (
     <section className="band-box">
       <Link to={`/bands/${band._id}`}><h3 className="title is-3">{band.name}</h3></Link>
       <img src={band.image} width="200px" />
-      <div>Looking for: {band.lookingForInstrument.name}</div>
+      {/* <div>Looking for: {band.lookingForInstrument.name}</div> */}
     </section>
   );
 }

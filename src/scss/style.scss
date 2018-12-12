@@ -52,24 +52,28 @@ h1,h2,h3,h4,h5,h6 {
 
 .signup-button {
     margin-right: 30%;
-  }
-//
-// .signup-button {
-//   margin-left: 30%;
-// }
+    background: transparent;
+    color: #FFFFFF;
+    .signup-button:hover {
+      color: #FFFFFF;
+      border: 1px solid transparent;
+    }
+}
 
-// .home-container {
-//   display: flex;
-//   /* flex-direction: column; */
-//   flex-wrap: wrap;
-//   align-items: center;
-//   justify-content: space-evenly;
-// }
-//
-// .home-box {
-//   width: 20vw;
-//   height: 10vh;
-// }
+.button:hover {
+  color: #FFFFFF;
+  border: 1px solid transparent;
+}
+
+.login-button {
+    background: transparent;
+    color: #FFFFFF;
+    .signup-button:hover {
+      color: #FFFFFF;
+      border: 1px solid transparent;
+    }
+}
+
 
 
 .is-4 {
