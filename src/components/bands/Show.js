@@ -29,7 +29,6 @@ class Show extends React.Component {
 
   render() {
     const band = this.state.band;
-    console.log('band in show render', band.lookingForInstrument.name);
     return(
       <main>
         {band

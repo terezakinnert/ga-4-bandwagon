@@ -1,5 +1,5 @@
-// font-family: 'Lora', serif;
-// font-family: 'Oswald', sans-serif;
+@import 'home';
+@import 'forms';
 
 * {
   font-family: 'Roboto', serif;
@@ -10,76 +10,20 @@
   }
 }
 
-.home-title {
-  margin: 4rem;
-  padding: 2rem;
-  color: #FFFFFF;
-}
-
-.home-subtitle {
-  margin: 3rem;
-  padding: 1rem;
-  color: #000000;
-}
 
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Oswald', sans-serif;
 }
 
-.has-bg-img {
-  background: url('https://images.unsplash.com/photo-1501962679900-bea61483313b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2549&q=80');
-  background-position: center center;
-  background-repeat:  no-repeat;
-  background-size:cover;
-  opacity: 0.85;
+
+.normal-button {
+  .button:hover {
+    background-color: white;
+    border-color: #dbdbdb;
+  }
 }
-
-
-.login-container {
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  color: white;
-}
-
-.login-box {
-  width: 5vw;
-  height: 3vh;
-  color: white;
-}
-
-.signup-button {
-    margin-right: 30%;
-    background: transparent;
-    color: #FFFFFF;
-    .signup-button:hover {
-      color: #FFFFFF;
-      border: 1px solid transparent;
-    }
-}
-
-.button:hover {
-  color: #FFFFFF;
-  border: 1px solid transparent;
-}
-
-.login-button {
-    background: transparent;
-    color: #FFFFFF;
-    .signup-button:hover {
-      color: #FFFFFF;
-      border: 1px solid transparent;
-    }
-}
-
 
 
 .is-4 {
-  margin: 2rem;
-}
-
-.how-it-works {
   margin: 2rem;
 }

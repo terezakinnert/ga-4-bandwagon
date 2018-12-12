@@ -37,10 +37,12 @@ class FindMusicians extends React.Component {
     const users = this.state.users;
     return(
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <SelectFind instruments={this.state.instruments} onChange={this.handleChange} />
-          <button>Find</button>
-        </form>
+        <div className="form-box">
+          <form className="form" onSubmit={this.handleSubmit}>
+            <SelectFind instruments={this.state.instruments} onChange={this.handleChange} />
+            <button className="button normal-button">Find</button>
+          </form>
+        </div>
         {users && users.map(user => <div key={user._id}>{user.username}</div>)}
       </div>
     );

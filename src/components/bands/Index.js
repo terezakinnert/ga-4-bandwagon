@@ -12,7 +12,7 @@ class BandIndex extends React.Component {
 
   componentDidMount() {
     axios.get('/api/bands')
-      .then(result => this.setState({ bands: result.data }));
+      .then(result => this.setState({ bands: result.data }, () => console.log('this.state', this.state)));
   }
 
   render() {
