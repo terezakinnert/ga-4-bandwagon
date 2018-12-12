@@ -41,7 +41,7 @@ class Show extends React.Component {
                 {band.lookingForMembers && <p>Looking for members</p>}
                 {!band.lookingForMembers && <p>Not looking for members</p>}
               </div>
-              <div>Which instrument: {band.lookingForInstrument}</div>
+              <div>Which instrument: {band.lookingForInstrument.name}</div>
               <div>
                 <div>Current members:
                   {band.members && band.members.map(member => <p key={member}>{member}</p>)}
