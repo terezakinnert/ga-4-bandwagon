@@ -1,6 +1,23 @@
 @import 'home';
 @import 'forms';
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
 * {
   font-family: 'Roboto', serif;
   text-align: center;
@@ -10,12 +27,9 @@
   }
 }
 
+
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Oswald', sans-serif;
-}
-
-.is-2 {
-  margin: 2rem;
 }
 
 .normal-button {
@@ -25,13 +39,17 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
-
-.is-4 {
-  margin: 2rem;
+main {
+  margin: 2rem 0 2rem 0;
 }
 
 footer {
-  position: relative;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // background-color: #efefef;
+  text-align: center;
   padding: 2rem;
   border-top: 1px solid #333333;
   .github {

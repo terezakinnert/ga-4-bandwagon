@@ -23,9 +23,9 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div id="container">
           <Header />
-          <main>
+          <main id="body">
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/register' component={Register} />
