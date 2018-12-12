@@ -45,6 +45,10 @@ router.route('/findmusicians/:instrumentId')
 
 module.exports = router;
 
+
+// =================
+// TO FINISH OFF:
+// =================
 // const messages = require('../controllers/messagesCtrl');
 
 // router.route('/users/:userId/instruments')
