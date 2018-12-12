@@ -16,7 +16,7 @@ class FindBands extends React.Component {
     console.log('finding bands', this.state);
     axios.get(`/api/findbands/${this.state.lookingForInstrument}`)
       .then(result => {
-        this.setState({ bands: result.data }, () => console.log('this.state', this.state));
+        this.setState({ bands: result.data }, () => console.log('this.state should have bands', this.state));
         // this.props.history.push('/compatibleBands');
       });
   }

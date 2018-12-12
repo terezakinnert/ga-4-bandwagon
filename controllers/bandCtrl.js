@@ -9,7 +9,7 @@ function indexRoute(req, res, next) {
 
 function showRoute(req, res, next) {
   Band
-    .findById(req.params.id)
+    .findById(req.params.instrumentId)
     .populate('lookingForInstrument')
     .then(band => res.json(band))
     .catch(next);

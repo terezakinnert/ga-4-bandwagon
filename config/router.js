@@ -3,7 +3,6 @@ const router = require('express').Router();
 const band = require('../controllers/bandCtrl');
 const auth = require('../controllers/authCtrl');
 const user = require('../controllers/userCtrl');
-const messages = require('../controllers/messagesCtrl');
 const instruments = require('../controllers/instrumentCtrl');
 const secureRoute = require('../lib/secureRoute');
 const compatibles = require('../controllers/compatibleCtrl');
@@ -31,19 +30,6 @@ router.route('/users/:userId')
   .put(secureRoute, user.userUpdate)
   .delete(secureRoute, user.userDelete);
 
-// router.route('/users/:userId/instruments')
-//   .post(secureRoute, user.addInstrument);
-
-// router.route('/users/:userId/instruments/:instrumentId')
-//   .delete(secureRoute, user.deleteInstrument);
-
-router.route('/messages')
-  .get(messages.index)
-  .post(secureRoute, messages.create);
-
-router.route('/messages/:id')
-  .delete(secureRoute, messages.delete);
-
 router.route('/instruments')
   .get(instruments.index)
   .post(secureRoute, instruments.create);
@@ -58,3 +44,18 @@ router.route('/findmusicians/:instrumentId')
   .get(compatibles.usersByInstrument);
 
 module.exports = router;
+
+// const messages = require('../controllers/messagesCtrl');
+
+// router.route('/users/:userId/instruments')
+//   .post(secureRoute, user.addInstrument);
+
+// router.route('/users/:userId/instruments/:instrumentId')
+//   .delete(secureRoute, user.deleteInstrument);
+
+// router.route('/messages')
+//   .get(messages.index)
+//   .post(secureRoute, messages.create);
+//
+// router.route('/messages/:id')
+//   .delete(secureRoute, messages.delete);
