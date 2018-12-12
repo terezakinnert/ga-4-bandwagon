@@ -16,17 +16,14 @@ function showRoute(req, res, next) {
 }
 
 function createRoute(req, res, next) {
-  req.body.createdBy = req.tokenUserId;
-  Band.create(req.body)
+  Band
+    .create(req.body)
+    .then(band => res.status(201).json(band))
     .then(band => {
-      console.log('creating band, req.body is', req.body);
-      res.status(201).json(band);
-    })
-    .then(band => {
-      Band.populate(band, 'createdBy');
-      res.json(band);
-    })
-    .catch(next);
+      Band.populate('lookingForInstrument createdBy'),
+      res.json(band)
+        .catch(next);
+    });
 }
 
 function updateRoute(req, res, next) {

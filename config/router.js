@@ -51,7 +51,7 @@ router.route('/instruments')
 router.route('/instruments/:instrumentId')
   .delete(secureRoute, instruments.delete);
 
-router.route('/findbands')
+router.route('/findbands/:instrumentId')
   .get(compatibles.bandsByInstrument);
 
 router.route('/findmusicians/:instrumentId')

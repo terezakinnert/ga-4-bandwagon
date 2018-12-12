@@ -16,7 +16,7 @@ class New extends React.Component {
 
   handleChange({ target: { name, value }}) {
     this.setState({ [name]: value });
-    // console.log('name:value', name, value);
+    // console.log('handleChange name, value', name, value);
   }
 
   createBand() {
@@ -24,7 +24,7 @@ class New extends React.Component {
     axios.post('/api/bands', this.state, { headers: { Authorization: `Bearer ${getToken()}` }})
       .then(result => {
         this.props.history.push(`/bands/${result.data._id}`);
-        // console.log('this.state', this.state.band);
+        console.log('this.state after axios post', this.state.band);
       });
   }
 
@@ -32,13 +32,13 @@ class New extends React.Component {
     axios.get('/api/instruments')
       .then(result => {
         this.setState({ instruments: result.data });
-        // console.log('instruments?', this.state.instruments);
+        // console.log('instruments after axios get?', this.state.instruments);
       });
   }
 
   render() {
     const instruments = this.state.instruments;
-    console.log('this state', this.state);
+    console.log('this state in render', this.state);
     return(
       <div className="container columns is-centered">
         <div className="column is-12">

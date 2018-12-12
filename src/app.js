@@ -15,8 +15,8 @@ import Edit from './components/bands/Edit';
 import Show from './components/bands/Show';
 import UserIndex from './components/users/Index';
 import UserShow from './components/users/Show';
-import Profile from './components/users/Show';
 import FindMusicians from './components/users/compatible/FindMusicians';
+import FindBands from './components/bands/compatible/FindBands';
 
 class App extends React.Component {
   render() {
@@ -35,7 +35,7 @@ class App extends React.Component {
               <Route path='/bands/:id' component={Show} />
               <Route exact path='/users' component={UserIndex} />
               <Route path='/users/:id' component={UserShow} />
-              <Route path='/profile' component={Profile} />
+              <Route exact path='/findbands' component={FindBands} />
               <Route exact path='/findmusicians' component={FindMusicians} />
             </Switch>
           </main>
@@ -51,3 +51,5 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root')
 );
+
+// <Route path='/profile' component={Profile} />

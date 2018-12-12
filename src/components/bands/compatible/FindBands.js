@@ -3,7 +3,7 @@ import axios from 'axios';
 // import { Link, withRouter } from 'react-router-dom';
 import SelectFind from './SelectFind';
 
-class FindMusicians extends React.Component {
+class FindBands extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -13,11 +13,11 @@ class FindMusicians extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    console.log('finding musicians', this.state);
-    axios.get(`/api/findmusicians/${this.state.instrumentsPlayed}`)
+    console.log('finding bands', this.state);
+    axios.get(`/api/findbands/${this.state.lookingForInstrument}`)
       .then(result => {
-        this.setState({ users: result.data }, () => console.log('this.state', this.state));
-        // this.props.history.push('/compatibleMusicians');
+        this.setState({ bands: result.data }, () => console.log('this.state', this.state));
+        // this.props.history.push('/compatibleBands');
       });
   }
 
@@ -34,20 +34,20 @@ class FindMusicians extends React.Component {
   }
 
   render() {
-    const users = this.state.users;
+    const bands = this.state.bands;
     return(
       <div>
         <form onSubmit={this.handleSubmit}>
           <SelectFind instruments={this.state.instruments} onChange={this.handleChange} />
           <button>Find</button>
         </form>
-        {users && users.map(user => <div key={user._id}>{user.username}</div>)}
+        {bands && bands.map(band => <div key={band._id}>{band.name}</div>)}
       </div>
     );
   }
 }
 
-export default FindMusicians;
+export default FindBands;
 
 
 // <p>{users && users.map(user => <p key={user._id}>{user.username}</p>)}</p>

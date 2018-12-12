@@ -1,12 +1,12 @@
 import React from 'react';
 
 function Select({ instruments, onChange, lookingForInstrument }) {
-  // console.log('instruments', instruments);
+  console.log('instruments in select', instruments);
   return(
     <div className="">
       <div className="">
         <label className="label" htmlFor="lookingForInstrument">Instrument you are looking for</label>
-        <select onChange={onChange} value={lookingForInstrument} name="lookingForInstrument">
+        <select onChange={onChange} value={lookingForInstrument._id} name="lookingForInstrument._id">
           <option value="lookingForInstrument" name="lookingForInstrument">Select one...</option>
           {instruments
             &&
