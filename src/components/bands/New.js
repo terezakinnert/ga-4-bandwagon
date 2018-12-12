@@ -24,7 +24,7 @@ class New extends React.Component {
     axios.post('/api/bands', this.state, { headers: { Authorization: `Bearer ${getToken()}` }})
       .then(result => {
         this.props.history.push(`/bands/${result.data._id}`);
-        console.log('this.state after axios post', this.state.band);
+        console.log('this.state after axios post', this.state);
       });
   }
 
@@ -38,7 +38,7 @@ class New extends React.Component {
 
   render() {
     const instruments = this.state.instruments;
-    console.log('this state in render', this.state);
+    // console.log('this state in render', this.state);
     return(
       <div className="container columns is-centered">
         <div className="column is-12">
@@ -103,7 +103,6 @@ class New extends React.Component {
 
               <button className="button">Add this band</button>
               <Link to={`/bands/${this.props.match.params.id}`} className="button"><div>Cancel</div></Link>
-
             </form>
           </div>
         </div>

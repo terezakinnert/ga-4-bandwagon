@@ -6,15 +6,9 @@ html {
   box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 body {
   position: relative;
-  padding-bottom: 6rem;
+  padding-bottom: 7rem;
   min-height: 100%;
 }
 
@@ -29,6 +23,7 @@ body {
 
 
 h1,h2,h3,h4,h5,h6 {
+  margin-top: 2rem;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -40,7 +35,21 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 main {
-  margin: 2rem 0 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.looking {
+  color: #a00000;
+  margin: 0.5rem;
+  // border: 1px solid #a00000;
+  border-radius: 4%;
+}
+
+.not-looking {
+  color: #dbdbdb;
+  margin: 0.5rem;
+  // border: 1px solid #dbdbdb;
+  border-radius: 4%;
 }
 
 footer {
@@ -48,13 +57,12 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  // background-color: #efefef;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
   border-top: 1px solid #333333;
   .github {
     position: absolute;
-    left: 0.5rem;
-    bottom: 1rem;
+    left: 1rem;
+    bottom: 2rem;
   }
 }

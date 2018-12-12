@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 function BandBox({ band }) {
-  console.log('band.lookingForInstrument in bandbox', band.lookingForInstrument);
+  // console.log('band.lookingForInstrument in bandbox', band.lookingForInstrument);
   return (
     <Link to={`/bands/${band._id}`}>
       <div className="columns is-centered is-multiline">

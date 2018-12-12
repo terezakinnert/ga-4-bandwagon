@@ -14,7 +14,7 @@ class Show extends React.Component {
     axios.get(`/api/bands/${this.props.match.params.id}`)
       .then(result => {
         this.setState({ band: result.data });
-        console.log('band after axios get?', this.state.band);
+        // console.log('band after axios get?', this.state.band);
       });
   }
 
@@ -22,7 +22,6 @@ class Show extends React.Component {
     axios.delete(`/api/bands/${this.props.match.params.id}`,
       { headers: { Authorization: `Bearer ${getToken()}` }})
       .then(() => {
-        // console.log('this.props', this.props);
         this.props.history.push('/bands');
       });
   }
@@ -35,11 +34,15 @@ class Show extends React.Component {
           ?
           <div>
             <div>
-              <h3 className="title is-2">{band.name}</h3>
-              <img src={band.image} width="400px" />
               <div>
-                {band.lookingForMembers && <p>Looking for members</p>}
-                {!band.lookingForMembers && <p>Not looking for members</p>}
+                <h3 className="title is-2">{band.name}</h3>
+                <img src={band.image} width="400px" />
+              </div>
+            </div>
+            <div>
+              <div>
+                {band.lookingForMembers && <p className="looking">Looking for members</p>}
+                {!band.lookingForMembers && <p className="not-looking">Not looking for members</p>}
               </div>
               <div>Which instrument: {band.lookingForInstrument.name}</div>
               <div>
