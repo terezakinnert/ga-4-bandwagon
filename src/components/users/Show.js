@@ -35,7 +35,8 @@ class Show extends React.Component {
             <p>Website: {user.website}</p>
             <p>Genres: {user.genres}</p>
             <p>Influences: {user.influences}</p>
-            <p>Bands created: {user.bandsCreated.name}</p>
+            <p>Bands created:
+              {user.bandsCreated && user.bandsCreated.map(bandCreated => <p key={bandCreated._id}>{bandCreated.name}</p>)}</p>
           </div>
           :
           <p>Just a sec...</p>

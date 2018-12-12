@@ -2,7 +2,7 @@ const Band = require('../models/band');
 
 function indexRoute(req, res, next) {
   Band.find()
-    // .populate('createdBy')
+    .populate('lookingForInstrument')
     .then(bands => res.json(bands))
     .catch(next);
 }
@@ -10,6 +10,7 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next) {
   Band
     .findById(req.params.id)
+    .populate('lookingForInstrument')
     .then(band => res.json(band))
     .catch(next);
 }

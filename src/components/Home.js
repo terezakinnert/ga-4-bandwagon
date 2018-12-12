@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Home extends React.Component {
   constructor(props) {
@@ -19,8 +19,8 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="container">
-              <div className="button is-grouped has-text-centered signup-button">Sign Up</div>
-              <div className="button is-grouped has-text-centered login-button">Log In</div>
+              <Link to="/register"><div className="button is-grouped has-text-centered signup-button">Sign Up</div></Link>
+              <Link to="/login"><div className="button is-grouped has-text-centered login-button">Log In</div></Link>
             </div>
           </div>
         </section>

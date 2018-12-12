@@ -35,7 +35,7 @@ class Show extends React.Component {
           ?
           <div>
             <div>
-              <h3>{band.name}</h3>
+              <h3 className="title is-2">{band.name}</h3>
               <img src={band.image} width="400px" />
               <div>
                 {band.lookingForMembers && <p>Looking for members</p>}
@@ -49,7 +49,7 @@ class Show extends React.Component {
               </div>
               <p>Website: {band.website}</p>
               <p>Genres: {band.genres}</p>
-              <p>Influences: 
+              <p>Influences:
                 {band.influences && band.influences.map(influence => <span key={influence}>{influence}, </span>)}
               </p>
             </div>

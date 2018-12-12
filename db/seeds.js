@@ -33,7 +33,7 @@ const bandData = [
     name: 'Nitkowski',
     // location: 'London',
     lookingForMembers: true,
-    lookingForInstrument: 'Bass',
+    lookingForInstrument: '5c090724a118163cfc16a16b',
     image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/10285450_10154800649190473_5469665624404377633_o.jpg?_nc_cat=108&_nc_ht=scontent-lhr3-1.xx&oh=0dbc1e8ca8a1a1dcdaca4d1ed1cdc95d&oe=5C636FC6',
     members: ['Ed - Guitar, Vocals', 'Dan - Guitar, Vocals', 'Alex - Drums', 'Mike - Synth'],
     genres: ['NWOBMC'],
@@ -43,7 +43,7 @@ const bandData = [
     name: 'Shield Your Eyes',
     // location: 'London',
     lookingForMembers: true,
-    lookingForInstrument: 'Bass',
+    lookingForInstrument: '5c090724a118163cfc16a16b',
     image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/10669286_10152739101509752_3080118464520620406_o.jpg?_nc_cat=101&_nc_ht=scontent-lhr3-1.xx&oh=c17a963a86075994bde6ee8b13601a58&oe=5CA97FB1',
     members: ['Stef Ketteringham - vocals, lead guitar, harmonica', 'Henri Grimes - drums', 'Daniel Pedersen - bass guitar'],
     influences: ['Torticoli', 'Betunizer', 'Za!', 'Picore', 'Family Elan', 'Bamboo', 'Cotton Ponies', 'Rattle', 'Sweet Williams', 'Depakine Chrono', 'Papaye', 'Falenizza Horsepower', 'Nope', 'One Lick Less', 'Jealousy Mountain Duo']

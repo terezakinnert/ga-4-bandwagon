@@ -16,7 +16,7 @@ class Header extends React.Component {
 
   render() {
     const user = decodeToken();
-    console.log('user', user);
+    // console.log('user', user);
     return(
       <nav className="navbar">
         <div className="navbar-start">
