@@ -36,3 +36,133 @@ added a cancel button to new and edit pages
 after break: fixed logout (deleted token from l.storage before, but didn't update the page or redirect) => forgot to bind handle logout
 also fixed edit form - left createBand on onSubmit as opposed to updateBand (even though I was sure it was there correctly).
 Breaks are good (had lunch, read an article, got more water and chatted to Theo for a bit, got a mini mince pie)
+
+
+
+
+
+FIRST TEST
+/* global describe,it */
+import React from 'react';
+import axios from 'axios';
+import sinon from 'sinon';
+import { shallow, mount } from 'enzyme';
+import { expect } from 'chai';
+import BandBox from '../../../src/components/bands/BandBox';
+
+const testData =
+  {
+    _id: 1234,
+    name: 'Violent Femmes',
+    lookingForMembers: 'true',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKJsOKbkAwJuSrRqpHs5qJX3j4kiqwG-paCYjWMm_XX7X8HCB3uQ',
+    members: ['Gordon Gano – lead vocals, guitars, violin, banjo', 'Brian Ritchie – bass, backing and lead vocals, guitars, etc', 'Victor DeLorenzo – drums, percussion, backing vocals'],
+    genres: ['Folk punk']
+  };
+
+const match = {
+  params: {
+    id: 1234
+  }
+};
+
+sinon.stub(axios, 'get')
+  .returns(Promise.resolve({ data: testData }));
+
+describe('BandBox', () => {
+  it('should show the correct bands image', done => {
+    const component = shallow(<BandBox band={testData}/>);
+    // expect(component.find('img').length).to.eq(1);
+    expect(component.find('img').props().src).to.eq(testData.image);
+    done();
+  });
+
+  it('should show the band name', done => {
+    const component = mount(<BandBox match={match}/>);
+    // Just fake the fact that we have a burger on this.state:
+    component.setState({ band: testData });
+    // NOTE: We can console.log the HTML our browser has produced from the component!
+    // console.log(component.html());
+    // We can now write our assertions. These must all be true
+    // for the test case to pass.
+    expect(component.find('h4').text()).to.eq(testData.name);
+    done();
+  });
+
+  it('should show an instrument the band is looking for', done => {
+    const component = shallow(<BandBox match={match}/>);
+    component.setState({ band: testData });
+    expect(component.find('.content').text()).to.eq('Looking for: ');
+    // expect(component.find('.field input').length).to.eq(1);
+    // expect(component.find('.field input').props().value).to.eq(0);
+    done();
+  });
+
+});
+
+
+// =========
+// first test results
+// =========
+BandBox
+    1) should show the correct bands image
+The above error occurred in the <Route> component:
+    in Route (created by withRouter(BandBox))
+    in withRouter(BandBox) (created by WrapperComponent)
+    in WrapperComponent
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://fb.me/react-error-boundaries to learn more about error boundaries.
+    2) should show the band name
+    3) should show an instrument the band is looking for
+
+
+  0 passing (89ms)
+  3 failing
+
+  1) BandBox
+       should show the correct bands image:
+
+      AssertionError: expected 0 to equal 1
+      + expected - actual
+
+      -0
+      +1
+
+      at Context.<anonymous> (test/client/bands/BandBox_spec.js:31:45)
+
+  2) BandBox
+       should show the band name:
+     Invariant Violation: You should not use <Route> or withRouter() outside a <Router>
+      at invariant (node_modules/invariant/invariant.js:40:15)
+      at Route.computeMatch (node_modules/react-router/Route.js:81:29)
+      at new Route (node_modules/react-router/Route.js:56:20)
+      at constructClassInstance (node_modules/react-dom/cjs/react-dom.development.js:12484:18)
+      at updateClassComponent (node_modules/react-dom/cjs/react-dom.development.js:14255:5)
+      at beginWork (node_modules/react-dom/cjs/react-dom.development.js:15082:16)
+      at performUnitOfWork (node_modules/react-dom/cjs/react-dom.development.js:17820:12)
+      at workLoop (node_modules/react-dom/cjs/react-dom.development.js:17860:24)
+      at renderRoot (node_modules/react-dom/cjs/react-dom.development.js:17946:7)
+      at performWorkOnRoot (node_modules/react-dom/cjs/react-dom.development.js:18837:7)
+      at performWork (node_modules/react-dom/cjs/react-dom.development.js:18749:7)
+      at performSyncWork (node_modules/react-dom/cjs/react-dom.development.js:18723:3)
+      at requestWork (node_modules/react-dom/cjs/react-dom.development.js:18592:5)
+      at scheduleWork (node_modules/react-dom/cjs/react-dom.development.js:18401:5)
+      at scheduleRootUpdate (node_modules/react-dom/cjs/react-dom.development.js:19069:3)
+      at updateContainerAtExpirationTime (node_modules/react-dom/cjs/react-dom.development.js:19097:10)
+      at updateContainer (node_modules/react-dom/cjs/react-dom.development.js:19154:10)
+      at ReactRoot.render (node_modules/react-dom/cjs/react-dom.development.js:19416:3)
+      at /Users/terezak/development/wdi-project-4/node_modules/react-dom/cjs/react-dom.development.js:19556:14
+      at unbatchedUpdates (node_modules/react-dom/cjs/react-dom.development.js:18952:10)
+      at legacyRenderSubtreeIntoContainer (node_modules/react-dom/cjs/react-dom.development.js:19552:5)
+      at Object.render (node_modules/react-dom/cjs/react-dom.development.js:19613:12)
+      at Object.render (node_modules/enzyme-adapter-react-16/build/ReactSixteenAdapter.js:352:114)
+      at new ReactWrapper (node_modules/enzyme/build/ReactWrapper.js:130:16)
+      at mount (node_modules/enzyme/build/mount.js:21:10)
+      at Context.<anonymous> (test/client/bands/BandBox_spec.js:37:23)
+
+  3) BandBox
+       should show an instrument the band is looking for:
+     Error: ShallowWrapper::setState() can only be called on class components
+      at ShallowWrapper.setState (node_modules/enzyme/build/ShallowWrapper.js:569:17)
+      at Context.<anonymous> (test/client/bands/BandBox_spec.js:50:15)

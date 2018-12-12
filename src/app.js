@@ -6,6 +6,7 @@ import 'bulma';
 import './scss/style.scss';
 
 import Header from './components/Header';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
@@ -39,6 +40,7 @@ class App extends React.Component {
               <Route exact path='/findmusicians' component={FindMusicians} />
             </Switch>
           </main>
+          <Footer />
         </div>
       </BrowserRouter>
     );

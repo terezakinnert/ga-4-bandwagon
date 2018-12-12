@@ -1,8 +1,8 @@
-/* global describe,it,beforeEach */
+/* global describe,it */
 import React from 'react';
 import axios from 'axios';
 import sinon from 'sinon';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { expect } from 'chai';
 import BandBox from '../../../src/components/bands/BandBox';
 
@@ -16,11 +16,34 @@ const testData =
     genres: ['Folk punk']
   };
 
+const match = {
+  params: {
+    id: 1234
+  }
+};
+
+sinon.stub(axios, 'get')
+  .returns(Promise.resolve({ data: testData }));
+
 describe('BandBox', () => {
-  it('should show the correct band', done => {
-    const component = shallow(<BandBox band={testData}/>);
-    expect(component.find('img').length).to.eq(1);
+  it('should show the correct bands image', done => {
+    const component = mount(<BandBox band={testData}/>);
     expect(component.find('img').props().src).to.eq(testData.image);
     done();
   });
+
+  it('should show the band name', done => {
+    const component = mount(<BandBox match={match}/>);
+    component.setState({ band: testData });
+    expect(component.find('h4').text()).to.eq(testData.name);
+    done();
+  });
+
+  it('should show an instrument the band is looking for', done => {
+    const component = mount(<BandBox match={match}/>);
+    component.setState({ band: testData });
+    expect(component.find('.content').text()).to.eq('Looking for: ,(testData.name)');
+    done();
+  });
+
 });
