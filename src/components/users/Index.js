@@ -18,10 +18,9 @@ class UserIndex extends React.Component {
     const users = this.state.users;
     return(
       <section>
-        <h1>All the Musicians</h1>
+        <h2 className="title is-2">All the Musicians</h2>
         <div>
-          {users && users.map(user => <UserBox key={user._id} user={user} />
-          )}
+          {users && users.map(user => <UserBox key={user._id} user={user} />)}
         </div>
       </section>
     );

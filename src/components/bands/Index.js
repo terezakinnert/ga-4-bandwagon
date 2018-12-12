@@ -19,7 +19,7 @@ class BandIndex extends React.Component {
     console.log('bands in render?', this.state.bands);
     return(
       <section>
-        <h1 className="title is-1">Browse Bands</h1>
+        <h2 className="title is-2">Browse Bands</h2>
         <div>
           {this.state.bands && this.state.bands.map(
             band => <BandBox key={band._id} band={band} />
