@@ -61,7 +61,7 @@ const bandData = [
 const userData = [
   {
     username: 'Seb',
-    email: 'seb@tull.com',
+    email: 's@s',
     password: 'pass',
     instrumentsPlayed: instrumentIds[2],
     lookingForBands: false,
