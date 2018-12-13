@@ -57,9 +57,9 @@ class Show extends React.Component {
               </p>
             </div>
             <div>
-              <Link to={`/bands/${band._id}/edit`}><div>Edit</div></Link>
-              <div onClick={this.handleDelete}>Delete</div>
-              <Link to="/bands"><div>Go Back</div></Link>
+              <Link to={`/bands/${band._id}/edit`}><div className="button">Edit</div></Link>
+              <div onClick={this.handleDelete} className="button">Delete</div>
+              <Link to="/bands"><div className="button">Go Back</div></Link>
             </div>
           </div>
           :
