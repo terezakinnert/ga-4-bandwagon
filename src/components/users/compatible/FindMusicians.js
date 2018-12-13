@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SelectFind from './SelectFind';
 
 class FindMusicians extends React.Component {
@@ -43,13 +43,12 @@ class FindMusicians extends React.Component {
             <button className="button normal-button">Find</button>
           </form>
         </div>
-        {users && users.map(user => <div key={user._id}>{user.username}</div>)}
+        {users && users.map(user =>
+          <Link to={`/users/${user._id}`} key={user.username}>
+            <div className="found" key={user._id}>{user.username}</div></Link>)}
       </div>
     );
   }
 }
 
 export default FindMusicians;
-
-
-// <p>{users && users.map(user => <p key={user._id}>{user.username}</p>)}</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-// import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SelectFind from './SelectFind';
 
 class FindBands extends React.Component {
@@ -42,7 +42,9 @@ class FindBands extends React.Component {
             <button className="button normal-button">Find</button>
           </form>
         </div>
-        {bands && bands.map(band => <div key={band._id}>{band.name}</div>)}
+        {bands && bands.map(band =>
+          <Link to={`/bands/${band._id}`} key={band.name}>
+            <div className="found" key={band._id}>{band.name}</div></Link>)}
       </div>
     );
   }

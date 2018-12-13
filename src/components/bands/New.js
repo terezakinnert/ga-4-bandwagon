@@ -42,69 +42,68 @@ class New extends React.Component {
     return(
       <div className="container columns is-centered">
         <div className="column is-12">
-          <div className="box columns">
-            <form onSubmit={this.createBand}>
+          <h3 className="title is-3">Add your band</h3>
+          <form className="form" onSubmit={this.createBand}>
 
-              <div className="field">
-                <div className="control">
-                  <label className="label" htmlFor="name">Name</label>
-                  <input className="input" name="name" type="name" onChange={this.handleChange} value={this.state.name || ''} />
-                </div>
+            <div className="field">
+              <div className="control">
+                <label className="label" htmlFor="name">Name</label>
+                <input className="input" name="name" type="name" onChange={this.handleChange} value={this.state.name || ''} />
               </div>
+            </div>
 
-              <div className="field">
-                <span className="label">Looking For Members?</span>
-                <div className="radio">
-                  <input name="lookingForMembers" type="radio" id="yes" onChange={this.handleChange} value="true" />
-                  <label htmlFor="true">Yes</label>
-                </div>
-                <div className="radio">
-                  <input name="lookingForMembers" type="radio" id="no" onChange={this.handleChange} value="false" />
-                  <label htmlFor="false">Not right now</label>
-                </div>
+            <div className="field">
+              <span className="label">Looking For Members?</span>
+              <div className="radio">
+                <input name="lookingForMembers" type="radio" id="yes" onChange={this.handleChange} value="true" />
+                <label htmlFor="true">Yes</label>
               </div>
-
-              <Select className="field" onChange={this.handleChange} instruments={instruments} lookingForInstrument={this.state.lookingForInstrument || ''} />
-
-              <div className="field">
-                <div className="control">
-                  <label className="label" htmlFor="image">Image URL</label>
-                  <input className="input" name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />
-                </div>
+              <div className="radio">
+                <input name="lookingForMembers" type="radio" id="no" onChange={this.handleChange} value="false" />
+                <label htmlFor="false">Not right now</label>
               </div>
+            </div>
 
-              <div className="field">
-                <div className="control">
-                  <label className="label" htmlFor="members">Who is in your band?</label>
-                  <input className="input" name="members" type="text" onChange={this.handleChange} value={this.state.members || ''} />
-                </div>
+            <Select className="field" onChange={this.handleChange} instruments={instruments} lookingForInstrument={this.state.lookingForInstrument || ''} />
+
+            <div className="field">
+              <div className="control">
+                <label className="label" htmlFor="image">Image URL</label>
+                <input className="input" name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />
               </div>
+            </div>
 
-              <div className="field">
-                <div className="control">
-                  <label className="label" htmlFor="website">Your website address</label>
-                  <input className="input" name="website" type="text" onChange={this.handleChange} value={this.state.website || ''} />
-                </div>
+            <div className="field">
+              <div className="control">
+                <label className="label" htmlFor="members">Who is in your band?</label>
+                <input className="input" name="members" type="text" onChange={this.handleChange} value={this.state.members || ''} />
               </div>
+            </div>
 
-              <div className="field">
-                <div className="control">
-                  <label className="label" htmlFor="genres">What kind of music do you play?</label>
-                  <input className="input" name="genres" type="text" onChange={this.handleChange} value={this.state.genres || ''} />
-                </div>
+            <div className="field">
+              <div className="control">
+                <label className="label" htmlFor="website">Your website address</label>
+                <input className="input" name="website" type="text" onChange={this.handleChange} value={this.state.website || ''} />
               </div>
+            </div>
 
-              <div className="field">
-                <div className="control">
-                  <label className="label" htmlFor="influences">Your influences:</label>
-                  <input className="input" name="influences" type="text" onChange={this.handleChange} value={this.state.influences || ''} />
-                </div>
+            <div className="field">
+              <div className="control">
+                <label className="label" htmlFor="genres">What kind of music do you play?</label>
+                <input className="input" name="genres" type="text" onChange={this.handleChange} value={this.state.genres || ''} />
               </div>
+            </div>
 
-              <button className="button">Add this band</button>
-              <Link to={`/bands/${this.props.match.params.id}`} className="button"><div>Cancel</div></Link>
-            </form>
-          </div>
+            <div className="field">
+              <div className="control">
+                <label className="label" htmlFor="influences">Your influences:</label>
+                <input className="input" name="influences" type="text" onChange={this.handleChange} value={this.state.influences || ''} />
+              </div>
+            </div>
+
+            <button className="button">Add this band</button>
+            <Link to={`/bands/${this.props.match.params.id}`} className="button"><div>Cancel</div></Link>
+          </form>
         </div>
       </div>
     );

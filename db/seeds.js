@@ -33,7 +33,7 @@ const bandData = [
     name: 'Nitkowski',
     // location: 'London',
     lookingForMembers: true,
-    lookingForInstrument: '5c090724a118163cfc16a16b',
+    lookingForInstrument: instrumentIds[2],
     image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/10285450_10154800649190473_5469665624404377633_o.jpg?_nc_cat=108&_nc_ht=scontent-lhr3-1.xx&oh=0dbc1e8ca8a1a1dcdaca4d1ed1cdc95d&oe=5C636FC6',
     members: ['Ed - Guitar, Vocals', 'Dan - Guitar, Vocals', 'Alex - Drums', 'Mike - Synth'],
     genres: ['NWOBMC'],
@@ -43,30 +43,43 @@ const bandData = [
     name: 'Shield Your Eyes',
     // location: 'London',
     lookingForMembers: true,
-    lookingForInstrument: '5c090724a118163cfc16a16b',
+    lookingForInstrument: instrumentIds[1],
     image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/10669286_10152739101509752_3080118464520620406_o.jpg?_nc_cat=101&_nc_ht=scontent-lhr3-1.xx&oh=c17a963a86075994bde6ee8b13601a58&oe=5CA97FB1',
     members: ['Stef Ketteringham - vocals, lead guitar, harmonica', 'Henri Grimes - drums', 'Daniel Pedersen - bass guitar'],
     influences: ['Torticoli', 'Betunizer', 'Za!', 'Picore', 'Family Elan', 'Bamboo', 'Cotton Ponies', 'Rattle', 'Sweet Williams', 'Depakine Chrono', 'Papaye', 'Falenizza Horsepower', 'Nope', 'One Lick Less', 'Jealousy Mountain Duo']
+  },
+  {
+    name: 'WDI 37',
+    lookingForMembers: true,
+    lookingForInstrument: instrumentIds[5],
+    image: 'https://imgur.com/a/o3PgcbF',
+    members: ['Too many to name'],
+    influences: ['WDI35', 'WDI36', '...']
   }
 ];
 
 const userData = [
   {
-    username: 'Bob',
-    email: 'b@b',
+    username: 'Seb',
+    email: 'seb@tull.com',
     password: 'pass',
-    location: 'Chicago',
-    instrumentsPlayed: instrumentIds[0],
-    lookingForBands: true,
+    instrumentsPlayed: instrumentIds[2],
+    lookingForBands: false,
+    image: 'https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2095491/580/386/m1/fpnw/wm0/cowboy-playing-bass-guitar-circ-dwg_prvw-.jpg?1483676538&s=54f9263a682e0aa1b583fa849200b5d6',
     _id: userIds[0]
   }, {
-    username: 'Jake',
-    email: 'j@j',
+    username: 'Kunal',
+    email: 'kunal@chaos.com',
     password: 'pass',
-    location: 'Chicago',
-    instrumentsPlayed: [instrumentIds[1]],
-    lookingForBands: false,
+    instrumentsPlayed: instrumentIds[1],
+    lookingForBands: true,
+    image: 'https://image.freepik.com/free-vector/singer-illustration_4120-7.jpg',
+    genres: ['Prog'],
+    influences: ['All kinds!'],
+    about: 'Good at screaming my lungs out, so looking for a band to join.',
     _id: userIds[1]
+  }, {
+
   }
 ];
 

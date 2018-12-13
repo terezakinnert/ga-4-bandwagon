@@ -38,14 +38,26 @@ class Register extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="name">Username</label>
-          <input name="username" type="username" onChange={this.handleChange} value={this.state.username || ''} />
+          <div className="field">
+            <div className="control">
+              <label className="label" htmlFor="name">Username</label>
+              <input className="input" name="username" type="username" onChange={this.handleChange} value={this.state.username || ''} />
+            </div>
+          </div>
 
-          <label>Email</label>
-          <input name="email" type="email" onChange={this.handleChange} value={this.state.email || ''} />
+          <div className="field">
+            <div className="control">
+              <label className="label" htmlFor="email">Email</label>
+              <input className="input" name="email" type="email" onChange={this.handleChange} value={this.state.email || ''} />
+            </div>
+          </div>
 
-          <label>Password</label>
-          <input name="password" type="password" onChange={this.handleChange} value={this.state.password || ''} />
+          <div className="field">
+            <div className="control">
+              <label className="label" htmlFor="password">Password</label>
+              <input className="input" name="password" type="password" onChange={this.handleChange} value={this.state.password || ''} />
+            </div>
+          </div>
 
           <Select onChange={this.handleChange} instruments={instruments} instrumentsPlayed={this.state.instrumentsPlayed || ''} />
 

@@ -5,13 +5,15 @@ function Select({ instruments, onChange, lookingForInstrument }) {
   return(
     <div className="">
       <div className="">
-        <label className="label" htmlFor="lookingForInstrument">Instrument you are looking for</label>
-        <select onChange={onChange} value={lookingForInstrument._id} name="lookingForInstrument._id">
-          <option value={lookingForInstrument._id} name="lookingForInstrument._id">Select one...</option>
-          {instruments
-            &&
-            instruments.map(instrument => <option key={instrument._id} name="lookingForInstrument">{instrument.name}</option>)}
-        </select>
+        <label className="label select-label" htmlFor="lookingForInstrument">Instrument: </label>
+        <div className="select">
+          <select onChange={onChange} value={lookingForInstrument._id} name="lookingForInstrument">
+            <option>Select one...</option>
+            {instruments
+              &&
+              instruments.map(instrument => <option key={instrument._id} name="lookingForInstrument" value={instrument._id}>{instrument.name}</option>)}
+          </select>
+        </div>
       </div>
     </div>
   );
