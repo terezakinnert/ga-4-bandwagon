@@ -52,7 +52,7 @@ const bandData = [
     name: 'WDI 37',
     lookingForMembers: true,
     lookingForInstrument: instrumentIds[5],
-    image: 'https://imgur.com/a/o3PgcbF',
+    image: 'https://d1qb2nb5cznatu.cloudfront.net/startups/i/52465-5a0924aaaf6af2265c6bb823b7613658-medium_jpg.jpg?buster=1343285695',
     members: ['Too many to name'],
     influences: ['WDI35', 'WDI36', '...']
   }
