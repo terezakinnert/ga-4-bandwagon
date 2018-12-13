@@ -66,6 +66,7 @@ const userData = [
     instrumentsPlayed: instrumentIds[2],
     lookingForBands: false,
     image: 'https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/2095491/580/386/m1/fpnw/wm0/cowboy-playing-bass-guitar-circ-dwg_prvw-.jpg?1483676538&s=54f9263a682e0aa1b583fa849200b5d6',
+    influnces: ['Wren', 'Control', 'Strauss'],
     _id: userIds[0]
   }, {
     username: 'Kunal',
@@ -78,8 +79,6 @@ const userData = [
     influences: ['All kinds!'],
     about: 'Good at screaming my lungs out, so looking for a band to join.',
     _id: userIds[1]
-  }, {
-
   }
 ];
 
