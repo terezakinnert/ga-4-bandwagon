@@ -31,16 +31,16 @@ class Login extends React.Component {
     return (
       <div>
         <h3 className="title is-3">Please, log in</h3>
-        <form onSubmit={this.handleSubmit}>
+        <form className="box form form-box columns is-centered is-multiline" onSubmit={this.handleSubmit}>
 
-          <div className="field">
+          <div className="field column is-12">
             <div className="control">
               <label className="label" htmlFor="email">Email</label>
               <input className="input" name="email" type="email" onChange={this.handleChange} value={this.state.email || ''} />
             </div>
           </div>
 
-          <div className="field">
+          <div className="field column is-12">
             <div className="control">
               <label className="label" htmlFor="password">Password</label>
               <input className="input" name="password" type="password" onChange={this.handleChange} value={this.state.password || ''} />
