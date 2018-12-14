@@ -55,6 +55,13 @@ const bandData = [
     image: 'https://d1qb2nb5cznatu.cloudfront.net/startups/i/52465-5a0924aaaf6af2265c6bb823b7613658-medium_jpg.jpg?buster=1343285695',
     members: ['Too many to name'],
     influences: ['WDI35', 'WDI36', '...']
+  }, {
+    name: 'Junkyard Choir',
+    lookingForMembers: true,
+    lookingForInstrument: instrumentIds[8],
+    image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/13086649_999115446820894_7425779835439776074_o.jpg?_nc_cat=105&_nc_ht=scontent-lhr3-1.xx&oh=f6c4ca0585c9d61c3f3fb1effa549936&oe=5C99B4B9',
+    members: ['Mark Woods - vocals/guitar', 'Tom Herbert - drums/vocals'],
+    influences: ['black coffee',  'cigarettes', 'Kraken rum', '& Tom Waits']
   }
 ];
 

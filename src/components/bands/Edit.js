@@ -42,43 +42,72 @@ class Edit extends React.Component {
     console.log('are we here?');
     return(
       <div>
-        <form onSubmit={this.updateBand}>
-          <label htmlFor="name">Name</label>
-          <input name="name" type="name" onChange={this.handleChange} value={this.state.name || ''} />
+        <div className="container has-text-centered">
+          <div className="column is-10 is-offset-1">
+            <h3 className="title is-3">Update Your Band</h3>
+            <form className="box form form-box columns is-centered is-multiline" onSubmit={this.updateBand}>
 
-          <label htmlFor="location">Location</label>
-          <input name="location" type="text" onChange={this.handleChange} value={this.state.location || ''} />
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="name">Name</label>
+                  <input className="input" name="name" type="name" onChange={this.handleChange} value={this.state.name || ''} />
+                </div>
+              </div>
 
-          <span>Looking For Members?</span>
-          <div>
-            <input name="lookingForMembers" type="radio" id="yes" onChange={this.handleChange} value="true" />
-            <label htmlFor="true">Yes</label>
+              <div className="field column is-12">
+                <span className="label">Looking For Members?</span>
+                <div className="radio">
+                  <input name="lookingForMembers" type="radio" id="yes" onChange={this.handleChange} value="true" />
+                  <label htmlFor="true">Yes</label>
+                </div>
+                <div className="radio">
+                  <input name="lookingForMembers" type="radio" id="no" onChange={this.handleChange} value="false" />
+                  <label htmlFor="false">Not right now</label>
+                </div>
+              </div>
+
+              <Select className="field column is-12" onChange={this.handleChange} instruments={instruments} lookingForInstrument={this.state.lookingForInstrument || ''} />
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="image">Image URL</label>
+                  <input className="input" name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="members">Who is in your band?</label>
+                  <input className="input" name="members" type="text" onChange={this.handleChange} value={this.state.members || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="website">Your website address</label>
+                  <input className="input" name="website" type="text" onChange={this.handleChange} value={this.state.website || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="genres">What kind of music do you play?</label>
+                  <input className="input" name="genres" type="text" onChange={this.handleChange} value={this.state.genres || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="influences">Your influences:</label>
+                  <input className="input" name="influences" type="text" onChange={this.handleChange} value={this.state.influences || ''} />
+                </div>
+              </div>
+
+              <button className="button is-grouped">Update</button>
+              <Link to={`/bands/${this.props.match.params.id}`} className="button is-grouped"><div>Cancel</div></Link>
+            </form>
           </div>
-          <div>
-            <input name="lookingForMembers" type="radio" id="no" onChange={this.handleChange} value="false" />
-            <label htmlFor="false">Not right now</label>
-          </div>
-
-          <Select onChange={this.handleChange} instruments={instruments} lookingForInstrument={this.state.lookingForInstrument || ''} />
-
-          <label htmlFor="image">Image URL</label>
-          <input name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />
-
-          <label htmlFor="members">Who is in your band?</label>
-          <input name="members" type="text" onChange={this.handleChange} value={this.state.members || ''} />
-
-          <label htmlFor="website">Your website address</label>
-          <input name="website" type="text" onChange={this.handleChange} value={this.state.website || ''} />
-
-          <label htmlFor="genres">What kind of music do you play?</label>
-          <input name="genres" type="text" onChange={this.handleChange} value={this.state.genres || ''} />
-
-          <label htmlFor="influences">Your influences:</label>
-          <input name="influences" type="text" onChange={this.handleChange} value={this.state.influences || ''} />
-
-          <button>Update this band</button>
-          <Link to={`/bands/${this.props.match.params.id}`}><div>Cancel</div></Link>
-        </form>
+        </div>
       </div>
     );
   }
