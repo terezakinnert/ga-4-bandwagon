@@ -29,7 +29,6 @@ function BandBox({ band }) {
         </div>
       </div>
     </Link>
-
   );
 }
 
