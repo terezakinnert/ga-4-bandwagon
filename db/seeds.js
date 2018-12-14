@@ -8,7 +8,9 @@ const Message = require('../models/message');
 
 const userIds = [
   '5c090718a118163cfc161168',
-  '5c090724a118163cfc161169'
+  '5c090718a118163cfd161168',
+  '5c090718a118163cfe161168',
+  '5c090724a118163cff161169'
 ];
 
 const instrumentIds = [
@@ -61,7 +63,8 @@ const bandData = [
     lookingForInstrument: instrumentIds[8],
     image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/13086649_999115446820894_7425779835439776074_o.jpg?_nc_cat=105&_nc_ht=scontent-lhr3-1.xx&oh=f6c4ca0585c9d61c3f3fb1effa549936&oe=5C99B4B9',
     members: ['Mark Woods - vocals/guitar', 'Tom Herbert - drums/vocals'],
-    influences: ['black coffee',  'cigarettes', 'Kraken rum', '& Tom Waits']
+    genres: ['dirty blues'],
+    influences: ['black coffee',  'cigarettes', 'Kraken rum', '& yTom Waits']
   }
 ];
 
@@ -86,6 +89,16 @@ const userData = [
     influences: ['All kinds!'],
     about: 'Good at screaming my lungs out, so looking for a band to join.',
     _id: userIds[1]
+  }, {
+    username: 'JonR',
+    email: 'j@r.com',
+    password: 'pass',
+    instrumentsPlayed: instrumentIds[8],
+    lookingForBands: true,
+    image: 'https://i.pinimg.com/originals/f8/43/1e/f8431e89b561c2f03571beaf95c63bf8.jpg',
+    influences: ['Prince', 'Bruce Springsteen', 'Alice Donut', 'Frank Zappa'],
+    about: 'Love improvising',
+    _id: userIds[2]
   }
 ];
 
