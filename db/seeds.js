@@ -64,7 +64,7 @@ const bandData = [
     image: 'https://scontent-lhr3-1.xx.fbcdn.net/v/t31.0-8/13086649_999115446820894_7425779835439776074_o.jpg?_nc_cat=105&_nc_ht=scontent-lhr3-1.xx&oh=f6c4ca0585c9d61c3f3fb1effa549936&oe=5C99B4B9',
     members: ['Mark Woods - vocals/guitar', 'Tom Herbert - drums/vocals'],
     genres: ['dirty blues'],
-    influences: ['black coffee',  'cigarettes', 'Kraken rum', '& yTom Waits']
+    influences: ['black coffee',  'cigarettes', 'Kraken rum', '& Tom Waits']
   }
 ];
 

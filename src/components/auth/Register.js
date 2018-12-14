@@ -37,78 +37,82 @@ class Register extends React.Component {
     console.log('this state in render', this.state);
     return (
       <div>
-        <h3 className="title is-3">Register to get the most out of BandWagon</h3>
-        <form className="box form form-box columns is-centered is-multiline"  onSubmit={this.handleSubmit}>
-          <div className="field column is-12">
-            <div className="control">
-              <label className="label" htmlFor="name">Username</label>
-              <input className="input" name="username" type="username" onChange={this.handleChange} value={this.state.username || ''} />
-            </div>
+        <div className="container has-text-centered">
+          <div className="column is-10 is-offset-1">
+            <h3 className="title is-3">Register</h3>
+            <p className="subtitle is-5">to get the most out of BandWagon</p>
+            <form className="box form form-box columns is-centered is-multiline" onSubmit={this.handleSubmit}>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="name">Username</label>
+                  <input className="input" name="username" type="username" onChange={this.handleChange} value={this.state.username || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="email">Email</label>
+                  <input className="input" name="email" type="email" onChange={this.handleChange} value={this.state.email || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="password">Password</label>
+                  <input className="input" name="password" type="password" onChange={this.handleChange} value={this.state.password || ''} />
+                </div>
+              </div>
+
+              <Select onChange={this.handleChange} instruments={instruments} instrumentsPlayed={this.state.instrumentsPlayed || ''} />
+
+              <div className="field">
+                <span className="label">Want to join a band?</span>
+                <div className="radio">
+                  <input name="lookingForBands" type="radio" id="yes" onChange={this.handleChange} value="true" />
+                  <label htmlFor="true">Yes</label>
+                </div>
+                <div className="radio">
+                  <input name="lookingForBands" type="radio" id="no" onChange={this.handleChange} value="false" />
+                  <label htmlFor="false">Not right now</label>
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="image">Image URL</label>
+                  <input className="input" name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="website">Your website address</label>
+                  <input className="input" name="website" type="text" onChange={this.handleChange} value={this.state.website || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="genres">What kind of music do you play?</label>
+                  <input className="input" name="genres" type="text" onChange={this.handleChange} value={this.state.genres || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="influences">Your influences:</label>
+                  <input className="input" name="influences" type="text" onChange={this.handleChange} value={this.state.influences || ''} />
+                </div>
+              </div>
+
+              <button className="button">Sign Up</button>
+            </form>
           </div>
-
-          <div className="field column is-12">
-            <div className="control">
-              <label className="label" htmlFor="email">Email</label>
-              <input className="input" name="email" type="email" onChange={this.handleChange} value={this.state.email || ''} />
-            </div>
-          </div>
-
-          <div className="field column is-12">
-            <div className="control">
-              <label className="label" htmlFor="password">Password</label>
-              <input className="input" name="password" type="password" onChange={this.handleChange} value={this.state.password || ''} />
-            </div>
-          </div>
-
-          <Select onChange={this.handleChange} instruments={instruments} instrumentsPlayed={this.state.instrumentsPlayed || ''} />
-
-          <div className="field">
-            <span className="label">Want to join a band?</span>
-            <div className="radio">
-              <input name="lookingForBands" type="radio" id="yes" onChange={this.handleChange} value="true" />
-              <label htmlFor="true">Yes</label>
-            </div>
-            <div className="radio">
-              <input name="lookingForBands" type="radio" id="no" onChange={this.handleChange} value="false" />
-              <label htmlFor="false">Not right now</label>
-            </div>
-          </div>
-
-          <div className="field column is-12">
-            <div className="control">
-              <label className="label" htmlFor="image">Image URL</label>
-              <input className="input" name="image" type="text" onChange={this.handleChange} value={this.state.image || ''} />
-            </div>
-          </div>
-
-          <div className="field column is-12">
-            <div className="control">
-              <label className="label" htmlFor="website">Your website address</label>
-              <input className="input" name="website" type="text" onChange={this.handleChange} value={this.state.website || ''} />
-            </div>
-          </div>
-
-          <div className="field column is-12">
-            <div className="control">
-              <label className="label" htmlFor="genres">What kind of music do you play?</label>
-              <input className="input" name="genres" type="text" onChange={this.handleChange} value={this.state.genres || ''} />
-            </div>
-          </div>
-
-          <div className="field column is-12">
-            <div className="control">
-              <label className="label" htmlFor="influences">Your influences:</label>
-              <input className="input" name="influences" type="text" onChange={this.handleChange} value={this.state.influences || ''} />
-            </div>
-          </div>
-
-          <button className="button">Sign Up</button>
-        </form>
+        </div>
       </div>
     );
   }
 }
 
 export default Register;
-
-// <Select onChange={this.handleChange} instruments={instruments} lookingForInstrument={this.state.lookingForInstrument || ''} />

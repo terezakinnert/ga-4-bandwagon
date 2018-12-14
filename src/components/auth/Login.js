@@ -30,25 +30,29 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <h3 className="title is-3">Please, log in</h3>
-        <form className="box form form-box columns is-centered is-multiline" onSubmit={this.handleSubmit}>
+        <div className="container has-text-centered">
+          <div className="column is-10 is-offset-1">
+            <h3 className="title is-3">Please log in</h3>
+            <form className="box form form-box columns is-centered is-multiline" onSubmit={this.handleSubmit}>
 
-          <div className="field column is-12">
-            <div className="control">
-              <label className="label" htmlFor="email">Email</label>
-              <input className="input" name="email" type="email" onChange={this.handleChange} value={this.state.email || ''} />
-            </div>
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="email">Email</label>
+                  <input className="input" name="email" type="email" onChange={this.handleChange} value={this.state.email || ''} />
+                </div>
+              </div>
+
+              <div className="field column is-12">
+                <div className="control">
+                  <label className="label" htmlFor="password">Password</label>
+                  <input className="input" name="password" type="password" onChange={this.handleChange} value={this.state.password || ''} />
+                </div>
+              </div>
+
+              <button className="button">Log In</button>
+            </form>
           </div>
-
-          <div className="field column is-12">
-            <div className="control">
-              <label className="label" htmlFor="password">Password</label>
-              <input className="input" name="password" type="password" onChange={this.handleChange} value={this.state.password || ''} />
-            </div>
-          </div>
-
-          <button className="button">Log In</button>
-        </form>
+        </div>
       </div>
     );
   }
