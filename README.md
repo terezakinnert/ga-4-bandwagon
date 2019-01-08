@@ -42,7 +42,7 @@ Prerequisites: MongoDB installed and `mongod` running
 BandWagon allows musicians to find a band to join, and bands to find a new member. Users can register, and then find either bands, or other musicians. These results are filtered by the instrument the user is looking for. Users can add a band profile as well, if they are a part of a group looking for new members.
 
 
-### Brief
+### Brief
 
 The requirements were to:
 
@@ -73,7 +73,8 @@ I planned to make this app mobile first, but had to abandon that due to time. Th
 
 ![Bandwagon wireframes](wireframes-screenshots/bandwagon-all.png)
 
-### Asana
+
+### Asana
 
 For this project's task management I used Asana, which I prefer over Trello.
 
@@ -86,7 +87,7 @@ Progress graph:
 <img src="wireframes-screenshots/asana1.png" width="30%" alt="Progress graph">
 
 
-### Screenshots
+### Screenshots
 
 Login page:
 
@@ -111,12 +112,12 @@ Search function (works in the same way on the Find a Band page):
 - user experience needs improvement: flash messages, on form pages particularly, would be a step in the right direction  
 
 
-## Challenges and Wins
+## Challenges and Wins
 
 This was the biggest and most complex project so far. I was excited to put my JavaScript, React and back end skills to use, learn more along the way, and I liked the concept of the app a lot. However I struggled quite a bit to translate my ideas into programming logic, spending time that I missed as the deadline was approaching. But after some re-evaluation and guidance from my instructors I reached MVP. I think this app has a lot of potential and I would love to come back to it and improve what I didn't have time for.
 
 
-## Future Work
+## Future Work 
 
 This app could be very feature heavy, and I have excluded a lot of nice-to-haves straight from the start. If I had more time I'd love to fix the bugs and vital features that are missing, as listed above. The layout and styling, especially on the show pages, also need some more work.
 
