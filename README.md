@@ -113,6 +113,7 @@ Search function (works in the same way on the Find a Band page):
 - no toggle button on band and user profiles (to change their looking for members/bands status)
 - can't get in touch with a potential band or member
 - user experience needs improvement: flash messages, on form pages particularly, would be a step in the right direction  
+- the app doesn't contain adequate tests. Due to the timeline and the scope of the project I didn't have enough time to understand and write tests that would help me during the coding process.
 
 
 ## Challenges and Wins
@@ -120,11 +121,12 @@ Search function (works in the same way on the Find a Band page):
 This was the biggest and most complex project so far. I was excited to put my JavaScript, React and back end skills to use, learn more along the way, and I liked the concept of the app a lot. However I struggled quite a bit to translate my ideas into programming logic, spending time that I missed as the deadline was approaching. But after some re-evaluation and guidance from my instructors I reached MVP. I think this app has a lot of potential and I would love to come back to it and improve what I didn't have time for.
 
 
-## Future Work 
+## Future Work
 
 This app could be very feature heavy, and I have excluded a lot of nice-to-haves straight from the start. If I had more time I'd love to fix the bugs and vital features that are missing, as listed above. The layout and styling, especially on the show pages, also need some more work.
 
 Next on the list would be:
+- learn more about TDD and include adequate unit tests
 - favourite/star system, where users could "bookmark" bands or musicians they were interested in
 - search results to be location dependent (ordered by distance) with maps included on show pages
 
