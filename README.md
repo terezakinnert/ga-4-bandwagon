@@ -2,9 +2,12 @@
 
 # BandWagon
 
+[![Known Vulnerabilities](https://snyk.io/test/github/terezakinnert/ga-4-bandwagon/badge.svg?targetFile=package.json)](https://snyk.io/test/github/terezakinnert/ga-4-bandwagon?targetFile=package.json)
+
 #### General Assembly's Web Development Immersive: Project 4
 
 This is a RESTful MERN single page application that I built in a week at the end of my web development course to get more practice using React.  
+
 
 
 ## Table of Contents
